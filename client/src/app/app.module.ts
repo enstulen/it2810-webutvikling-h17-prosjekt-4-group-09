@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { ToplistComponent } from './components/toplist/toplist.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { AlcoholItemComponent } from './components/alcohol-item/alcohol-item.component';
 
 const appRoutes: Routes = [
   {path: '', component: ToplistComponent},
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ToplistComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AlcoholItemComponent
   ],
   imports: [
     BrowserModule,
