@@ -1,7 +1,12 @@
-<div class="navigation-bar">
-    <ul>
-        <li><a routerLink="/">Toppliste</a></li>
-        <li><a routerLink="/categories">Kategorier</a></li>
-      </ul>
-</div>
+<div class="topnav" id="myTopnav">
+  <img class="logo" src="../assets/logo/apk_logo_50.png">
+  <p class="siteName">Alkohol Per Krone</p>
+  <ul>
+    <li><a class="link" routerLink="/" (click)="onClickLink()">TOPPLISTE</a></li>
+    <li><a class="link" routerLink="/categories" (click)="onClickLink()">KATEGORIER</a></li>
+    <li><input class="searchField" type="text"></li>
+  </ul>
+    <a href="javascript:void(0);" style="font-size:20px;" class="icon" (click)="onClickMenu()" >&#9776;</a>
+  </div>
 <router-outlet></router-outlet>
+
