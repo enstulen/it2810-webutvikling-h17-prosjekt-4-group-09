@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlcoholItemComponent } from '../alcohol-item/alcohol-item.component';
 import { Item } from '../../interfaces/item';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-toplist',
@@ -9,53 +10,26 @@ import { Item } from '../../interfaces/item';
 })
 export class ToplistComponent implements OnInit {
   items: [Item];
+  scrollNumber: number;
 
-  constructor() { }
+  onScroll() {
+    this.dataService.getTopListItems(this.scrollNumber).subscribe(items => {
+      for (let i = 0; i < items.length; i++) {
+        this.items.push(items[i]);
+      }
+      this.scrollNumber += 1;
+    });
+
+  }
+
+  constructor(private dataService: DataService) {
+    this.scrollNumber = 1;
+  }
 
   ngOnInit() {
-    // this.dataService.getPosts().subscribe(items => {
-    //   console.log(items);
-    //   this.items = items;
-    // });
-    this.items = [{
-      id: 1254,
-      name: 'Testing name1',
-      number: 45,
-      abv: 20,
-      apk: 2.03,
-      price: 299,
-      containerSize: 2,
-      points: 60
-    }, {
-      id: 8945,
-      name: 'Testing name2',
-      number: 45,
-      abv: 20,
-      apk: 2.03,
-      price: 299,
-      containerSize: 2,
-      points: 60
-    },
-    {
-      id: 2345,
-      name: 'Testing name3',
-      number: 45,
-      abv: 20,
-      apk: 2.03,
-      price: 299,
-      containerSize: 2,
-      points: 60
-    },
-    {
-      id: 2112,
-      name: 'Testing name4',
-      number: 45,
-      abv: 20,
-      apk: 2.03,
-      price: 299,
-      containerSize: 2,
-      points: 60
-    }];
+    this.dataService.getTopListItems(0).subscribe(items => {
+      this.items = items;
+    });
   }
 
 }

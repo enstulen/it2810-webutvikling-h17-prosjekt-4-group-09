@@ -1,8 +1,27 @@
 <div class="container">
-    <div class="item">
-        <p class="text">alcohol-item workssss! {{item.name}}</p>
-        <p class="text">APK {{item.apk}}</p>
-        <p class="text">kr{{item.price}}</p>
+    <div class="item" routerLink="/" (click)="onClickLink()">
+      <div class="item-points">
+        <h3 class="item-points-text">{{item.points}}</h3>
+      </div>
+      <img class="item-image" src="{{item.images.big}}"/>
+      <h5 class="headerText">{{item.name}}</h5>
+      <div class="item-text-container">
+        <div class="item-text-flex-item">
+          <p class="item-text-flex-item-header">{{item.apk.toFixed(2)}}</p>
+          <p class="item-text-flex-item-subheader">APK</p>
+          <p class="line">|</p>
+        </div>
+        <div class="item-text-flex-item">
+            <p class="item-text-flex-item-header">{{item.price}}</p>
+            <p class="item-text-flex-item-subheader">kr</p>
+            <p class="line">|</p>
+          </div>
+          <div class="item-text-flex-item">
+              <p class="item-text-flex-item-header">{{item.abv}}|{{item.containerSize}}</p>
+              <p class="item-text-flex-item-subheader">Procent/cl</p>
+          </div>
+      </div>
+      <button class="item-button">KJØP NÅ</button>
 
     </div>
 </div>
