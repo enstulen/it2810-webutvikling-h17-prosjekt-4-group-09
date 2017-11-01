@@ -14,4 +14,13 @@ export class DataService {
     .map(res => res.json());
   }
 
+  getSpecificItem(id) {
+    //id = "5060154910315"
+    console.log(this.http.get(`http://api.jowies.com/barcode/${id}`));
+   return this.http.get(`http://api.jowies.com/barcode/${id}`)
+   .map(res => res.json());
+
+ }
+
+
 }

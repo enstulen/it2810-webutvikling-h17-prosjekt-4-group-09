@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="item" routerLink="/" (click)="onClickLink()">
+    <div class="item" routerLink="/">
       <div class="item-points">
         <h3 class="item-points-text">{{item.points}}</h3>
       </div>
@@ -21,7 +21,7 @@
               <p class="item-text-flex-item-subheader">Procent/cl</p>
           </div>
       </div>
-      <button class="item-button">KJØP NÅ</button>
+      <button (click)="goToItem(item.barcode)" class="item-button">KJØP NÅ</button>
 
     </div>
 </div>

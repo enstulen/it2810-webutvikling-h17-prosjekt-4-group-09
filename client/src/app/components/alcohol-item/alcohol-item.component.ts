@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Item} from '../../interfaces/item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alcohol-item',
@@ -9,9 +10,18 @@ import {Item} from '../../interfaces/item';
 export class AlcoholItemComponent implements OnInit {
   @Input() item: Item;
 
-  constructor() { }
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
+  }
+
+  goToItem(id) {
+
+    this.router.navigate(['/item', id], id);
+
+
   }
 
 }

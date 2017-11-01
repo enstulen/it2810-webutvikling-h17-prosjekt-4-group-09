@@ -11,10 +11,9 @@
   infiniteScroll
   [infiniteScrollDistance]="0"
   [infiniteScrollThrottle]="50"
-  (scrolled)="onScroll()"
->
+  (scrolled)="onScroll()">
+  
     <app-alcohol-item *ngFor="let item of items"
       [item]="item">
     </app-alcohol-item>
 </div>
-

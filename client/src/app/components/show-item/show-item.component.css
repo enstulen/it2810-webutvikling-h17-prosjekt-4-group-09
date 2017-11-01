@@ -1,0 +1,22 @@
+.showItem-body {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.showItem-body .showItem-top {
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    width: 90%;
+    display: flex;
+    
+
+}
+
+.showItem-body .showItem-top .top-left {
+
+
+}

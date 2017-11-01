@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { Item } from '../../interfaces/item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-item',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowItemComponent implements OnInit {
 
-  constructor() { }
+  item: Item;
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
+
+    console.log(this.router.url.split('/'))
+    this.dataService.getSpecificItem(this.router.url.split('/')[2]).subscribe(item => {
+      this.item = item;
+      console.log(item);
+    });
   }
 
 }
