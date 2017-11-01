@@ -5,6 +5,7 @@
   /top/:page
 
   **Optional:** 
+
   /top/:page/?apk=desc
   /top/:page/?price=desc
 
@@ -19,10 +20,13 @@
    `page=[integer]`
 
    **Optional: **
+
    'apk=asc || apk=desc'
    'price=asc || price=desc'
 
-   default 'apk=desc'
+   default
+
+   'apk=desc'
 
 * **Data Params**
 
@@ -41,6 +45,7 @@
   /category/:category/:page
 
   **Optional:** 
+
   /category/:category/:page/?apk=desc
   /category/:category/:page/?price=desc
 
@@ -56,10 +61,13 @@
    `page=[integer]`
 
    **Optional: **
+
    'apk=asc || apk=desc'
    'price=asc || price=desc'
 
-   default 'apk=desc'
+   default
+
+   'apk=desc'
 
 * **Data Params**
 
@@ -100,9 +108,11 @@
 **Get products by substring**
 ----
 * **URL**
+
   /search/?substring=substring
 
   **Optional:** 
+
   /search/?substring=substring&apk=desc
   /search/?substring=substring&price=desc
 
@@ -118,9 +128,12 @@
    `substring=[string]`
 
    **Optional: **
+
    'apk=asc || apk=desc || price=asc || price=desc'
 
-   default 'apk=desc'
+   default
+
+   'apk=desc'
 
 * **Data Params**
 
