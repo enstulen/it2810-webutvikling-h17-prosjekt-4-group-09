@@ -2,6 +2,8 @@
   <img class="logo" src="../assets/logo/apk_logo_50.png">
   <p class="siteName">Alkohol Per Krone</p>
   <ul>
+    <li><a class="link" routerLink="/front" (click)="onClickLink()">HJEM</a></li>
+    <li><a class="link" routerLink="/about" (click)="onClickLink()">OM</a></li>
     <li><a class="link" routerLink="/" (click)="onClickLink()">TOPPLISTE</a></li>
     <li><a class="link" routerLink="/categories" (click)="onClickLink()">KATEGORIER</a></li>
     <li><input class="searchField" type="text"></li>
@@ -9,4 +11,3 @@
     <a href="javascript:void(0);" style="font-size:20px;" class="icon" (click)="onClickMenu()" >&#9776;</a>
   </div>
 <router-outlet></router-outlet>
-

@@ -1,0 +1,55 @@
+.img-container{
+  position: relative;
+  /*text-align: center;
+  vertical-align: middle;*/
+}
+
+.img-container .about-container{
+      position:fixed;
+      border-radius: 15px;
+      /*-moz-box-shadow: 0 0 3px #ffffff;
+      -webkit-box-shadow: 0 0 3px #ffffff;
+      box-shadow: 0 0 3px #ffffff;*/
+      opacity: 0.4;
+      top: 50%;
+      left: 50%;
+      width:66em;
+      height:38em;
+      margin-top: -17em; /*set to a negative number 1/2 of your height*/
+      margin-left: -33em; /*set to a negative number 1/2 of your width*/
+      background-color: #999999;
+
+
+}
+
+.b-img {
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    position: relative;
+}
+
+h1{
+  z-index: 100;
+  position: absolute;
+  color: black;
+  font-size: 100px;
+  font-weight: lighter;
+  text-align: center;
+  /*left: 150px;*/
+  letter-spacing: 0.5;
+  font-family: Helvetica;
+}
+
+h2{
+  z-index: 100;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
+  /*text-align: center;*/
+  /*left: 150px;*/
+
+  font-family: Helvetica;
+  width: 70%;
+}

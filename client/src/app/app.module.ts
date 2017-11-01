@@ -15,11 +15,15 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
 
 // Services
 import {DataService} from './services/data.service';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { FrontPageComponent } from './components/front-page/front-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: ToplistComponent},
   {path: 'categories', component: CategoriesComponent},
-  {path: 'item/:id', component: ShowItemComponent}
+  {path: 'item/:id', component: ShowItemComponent},
+  {path: 'about', component: AboutPageComponent},
+  {path: 'front', component: FrontPageComponent}
 
 ];
 
@@ -29,7 +33,9 @@ const appRoutes: Routes = [
     ToplistComponent,
     CategoriesComponent,
     AlcoholItemComponent,
-    ShowItemComponent
+    ShowItemComponent,
+    AboutPageComponent,
+    FrontPageComponent
   ],
   imports: [
     BrowserModule,
