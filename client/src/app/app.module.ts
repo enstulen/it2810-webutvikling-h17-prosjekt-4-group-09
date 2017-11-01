@@ -15,12 +15,13 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
 
 // Services
 import {DataService} from './services/data.service';
+import { CategoryComponent } from './components/category/category.component';
 
 const appRoutes: Routes = [
   {path: '', component: ToplistComponent},
   {path: 'categories', component: CategoriesComponent},
-  {path: 'item/:id', component: ShowItemComponent}
-
+  {path: 'item/:id', component: ShowItemComponent},
+  {path: 'category/:name', component: CategoryComponent}
 ];
 
 @NgModule({
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     ToplistComponent,
     CategoriesComponent,
     AlcoholItemComponent,
-    ShowItemComponent
+    ShowItemComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
