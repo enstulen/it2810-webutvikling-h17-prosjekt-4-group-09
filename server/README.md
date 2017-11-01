@@ -21,12 +21,12 @@
 
    **Optional: **
 
-   'apk=asc || apk=desc'
-   'price=asc || price=desc'
+   `apk=asc || apk=desc`
+   `price=asc || price=desc`
 
    default
 
-   'apk=desc'
+   `apk=desc`
 
 * **Data Params**
 
@@ -62,12 +62,12 @@
 
    **Optional: **
 
-   'apk=asc || apk=desc'
-   'price=asc || price=desc'
+   `apk=asc || apk=desc`
+   `price=asc || price=desc`
 
    default
 
-   'apk=desc'
+   `apk=desc`
 
 * **Data Params**
 
@@ -129,11 +129,11 @@
 
    **Optional: **
 
-   'apk=asc || apk=desc || price=asc || price=desc'
+   `apk=asc || apk=desc || price=asc || price=desc`
 
    default
 
-   'apk=desc'
+   `apk=desc`
 
 * **Data Params**
 
@@ -150,7 +150,7 @@
 
 **Product**
 
-'''{
+```{
   "code": "2876701",
   "name": "G. Reynolds Finissima Cava Reserva Brut",
   "productType": "Musserende vin",
@@ -224,5 +224,5 @@
   "newProduct": null,
   "apk": 0.7848043676069155,
   "points": 61
-}'''
+}```
  
