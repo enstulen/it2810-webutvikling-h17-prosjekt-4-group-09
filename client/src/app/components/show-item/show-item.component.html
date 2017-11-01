@@ -22,26 +22,26 @@
           <div class="top-values">
             <div>
               <p class="top_text">
-                Test1
+                {{ apkValue }}
               </p>
               <p class="bottom_text">
-                Desc1
+                Apk
               </p>
             </div>
             <div>
               <p class="top_text">
-                Test2
+                {{ item.price }}
               </p>
               <p class="bottom_text">
-                Desc2
+                kr
               </p>
             </div>
             <div>
               <p class="top_text">
-                Test3 | Test3
+                {{ item.abv }} | {{ item.containerSize }}
               </p>
               <p class="bottom_text">
-                Desc3
+                Prosent/l
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@
             Varetype
         </p>
         <p class="text-bottom">
-            Varetype
+            {{ item.productType }}
         </p>
       </div>
       <div class="text-container">
@@ -73,7 +73,7 @@
             Varenummer
         </p>
         <p class="text-bottom">
-            vnr.
+            {{ item.code }}
         </p>
       </div>
       <div class="text-container">
@@ -81,7 +81,7 @@
             Pris per liter
         </p>
         <p class="text-bottom">
-            pris
+            {{ item.pricePerLiter }}
         </p>
       </div>
       <div class="text-container">
@@ -89,7 +89,7 @@
             Farge
         </p>
         <p class="text-bottom">
-            fff
+            {{ item.color }}
         </p>
       </div>
       <div class="text-container">
@@ -97,22 +97,63 @@
             Smak
         </p>
         <p class="text-bottom">
-            smk
+            {{ item.taste }}
         </p>
       </div>
 
     </div>
 
-    
+    <h1 class="top_title">Innhold</h1>
 
     <div class="showItem-bottom">
 
+      <div class="text-container">
+        <p class="text-top">
+            Alkohol
+        </p>
+        <p class="text-bottom">
+            {{ item.abv }}
+        </p>
+      </div>
+      <div class="text-container">
+        <p class="text-top">
+            Syre
+        </p>
+        <p class="text-bottom">
+            {{ item.acid }}
+        </p>
+      </div>
+      <div class="text-container">
+        <p class="text-top">
+            Sukker
+        </p>
+        <p class="text-bottom">
+            {{ item.sugar }}
+        </p>
+      </div>
 
     </div>
 
+    <h1 class="top_title">Emballasje og merking</h1>
 
     <div class="showItem-bottom">
 
+      <div class="text-container">
+        <p class="text-top">
+            Emballasjetype
+        </p>
+        <p class="text-bottom">
+            {{ item.containerType }}
+        </p>
+      </div>
+      <div class="text-container">
+        <p class="text-top">
+            Kork
+        </p>
+        <p class="text-bottom">
+            {{ item.cork }}
+        </p>
+      </div>
 
     </div>
   </div>

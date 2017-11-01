@@ -145,6 +145,7 @@
   overflow: visible;
   position: relative;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .showItem-bottom .text-container {
@@ -155,7 +156,6 @@
   width: 90%;
   margin: 5px;
   margin-left: 4%;
-
 
 }
 

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ShowItemComponent implements OnInit {
 
   item: Item;
+  apkValue: number;
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
@@ -18,8 +19,7 @@ export class ShowItemComponent implements OnInit {
     console.log(this.router.url.split('/'))
     this.dataService.getSpecificItem(this.router.url.split('/')[2]).subscribe(item => {
       this.item = item;
-      console.log(item);
+      this.apkValue = Math.round(((item.abv * (item.containerSize * 10)) / item.price) * 100) / 100;
     });
   }
-
 }
