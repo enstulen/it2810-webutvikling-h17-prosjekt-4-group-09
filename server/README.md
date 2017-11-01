@@ -7,6 +7,7 @@
   **Optional:** 
 
   /top/:page/?apk=desc
+
   /top/:page/?price=desc
 
 * **Method:**
@@ -21,8 +22,7 @@
 
    **Optional: **
 
-   `apk=asc || apk=desc`
-   `price=asc || price=desc`
+   `apk=asc || apk=desc || price=asc || price=desc`
 
    default
 
@@ -47,6 +47,7 @@
   **Optional:** 
 
   /category/:category/:page/?apk=desc
+
   /category/:category/:page/?price=desc
 
 * **Method:**
@@ -62,8 +63,7 @@
 
    **Optional: **
 
-   `apk=asc || apk=desc`
-   `price=asc || price=desc`
+   `apk=asc || apk=desc || price=asc || price=desc`
 
    default
 
@@ -114,6 +114,7 @@
   **Optional:** 
 
   /search/?substring=substring&apk=desc
+  
   /search/?substring=substring&price=desc
 
 
