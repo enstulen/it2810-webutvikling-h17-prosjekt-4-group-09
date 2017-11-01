@@ -2,8 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Server for project 4",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
+    "webserver": "nodemon src/server.js --exec babel-node --presets es2015,stage-2",
+    "build": "babel src -d dist --presets es2015,stage-2",
+    "serve": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
