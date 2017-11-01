@@ -13,5 +13,9 @@ export class DataService {
     return this.http.get(`http://api.jowies.com/top/${page}`)
     .map(res => res.json());
   }
+  getCategory(category, page) {
+    return this.http.get(`http://api.jowies.com/${category}/${page}`)
+    .map(res => res.json());
+  }
 
 }
