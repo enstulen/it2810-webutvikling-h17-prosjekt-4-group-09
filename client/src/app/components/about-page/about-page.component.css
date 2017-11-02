@@ -1,55 +1,117 @@
-.img-container{
-  position: relative;
-  /*text-align: center;
-  vertical-align: middle;*/
-}
 
-.img-container .about-container{
-      position:fixed;
-      border-radius: 15px;
-      /*-moz-box-shadow: 0 0 3px #ffffff;
-      -webkit-box-shadow: 0 0 3px #ffffff;
-      box-shadow: 0 0 3px #ffffff;*/
-      opacity: 0.4;
-      top: 50%;
-      left: 50%;
-      width:66em;
-      height:38em;
-      margin-top: -17em; /*set to a negative number 1/2 of your height*/
-      margin-left: -33em; /*set to a negative number 1/2 of your width*/
-      background-color: #999999;
+.flex-container{
 
-
-}
-
-.b-img {
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
     background-color: blue;
-    position: relative;
+
 }
 
-h1{
-  z-index: 100;
-  position: absolute;
+.flex-left {
+
+  margin: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: yellow;
+  flex-wrap: wrap;
+  flex: 2;
+
+}
+
+.left-top {
+  background-color: red;
+  display: flex;
+  width: 100px;
+  height: 100px;
+
+
+
+}
+
+
+.left-middle {
+
+  display: flex;
+  width: 100%;
+  background-color: white;
+  flex-wrap: wrap;
+  flex: 1;
+
+}
+
+.left-bottom {
+
+  display: flex;
+  width: 100%;
+  background-color: green;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+
+}
+
+.flex-bottom-left {
+
+    background-color: red;
+    display: flex;
+    width: 45%;
+
+
+}
+
+.flex-bottom-right {
+
+    display: flex;
+    background-color: red;
+    width: 45%;
+
+}
+
+
+.flex-right {
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: green;
+    margin: 10px;
+    flex: 1;
+
+}
+
+.image-right{
+
+  margin: 50px;
+
+}
+
+
+
+
+h1 {
+
   color: black;
-  font-size: 100px;
+  width: 100%;
+  font-size: 65px;
+  margin-top:80px;
+  margin-left: 60px;
+  margin-bottom: 40px;
   font-weight: lighter;
   text-align: center;
-  /*left: 150px;*/
+  left: 150px;
   letter-spacing: 0.5;
   font-family: Helvetica;
+
 }
 
-h2{
-  z-index: 100;
-  position: absolute;
-  color: black;
-  font-size: 20px;
-  font-weight: lighter;
-  /*text-align: center;*/
-  /*left: 150px;*/
+p{
 
+  color: #909090;
+  font-size: 32px;
+  margin-left: 60px;
   font-family: Helvetica;
-  width: 70%;
+  font-weight: lighter;
+  letter-spacing: 0.5;
+
 }
