@@ -16,4 +16,9 @@ const products = async (ctx) => {
   }
 };
 
-export { products };
+const product = async (ctx) => {
+  console.log({ code: ctx.params.code });
+  ctx.body = await ctx.app.products.findOne({ code: ctx.params.code });
+};
+
+export { products, product };
