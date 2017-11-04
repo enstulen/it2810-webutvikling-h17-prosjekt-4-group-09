@@ -9,5 +9,4 @@ module.exports = {
     "node": true
   },
   extends: 'airbnb-base',
-  // required to lint *.vue files
 }
