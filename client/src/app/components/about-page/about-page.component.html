@@ -15,7 +15,9 @@
   </div>
 
   <div class="flex-item map">
-    <img class="map-image" src="../assets/map.png">
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
   </div>
 
 </div>
