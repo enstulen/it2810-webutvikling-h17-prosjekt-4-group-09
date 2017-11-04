@@ -17,6 +17,7 @@
   float: left;
   line-height: 70px;
   color:white;
+  font-weight: lighter;
 }
 .topnav a {
   margin-right: 20px;
@@ -26,6 +27,7 @@
   text-align: left;
   text-decoration: none;
   line-height: 70px;
+  font-weight: lighter;
 }
 
 .topnav a:hover {
@@ -42,7 +44,9 @@ ul{
 li{
   float:left;
   list-style:none;
+  font-weight: lighter;
 }
+
 .searchField {
   margin-top: 20px;
   margin-right: 20px;
