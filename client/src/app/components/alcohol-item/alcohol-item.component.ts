@@ -20,8 +20,6 @@ export class AlcoholItemComponent implements OnInit {
   goToItem(id) {
 
     this.router.navigate(['/item', id], id);
-
-
   }
 
 }
