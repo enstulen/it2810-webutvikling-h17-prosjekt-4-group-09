@@ -2,14 +2,14 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import BodyParser from 'koa-bodyparser';
 import Logger from 'koa-logger';
+import cors from 'kcors';
 
 import Mongo from './db/mongo';
-import { products } from './api/products';
+import { products, product } from './api/products';
 import productsQueryOptions from './api/products/queryOptions';
 
 async function setOptions(ctx, next) {
   ctx.options = productsQueryOptions;
-  console.log(ctx.options);
   await next();
 }
 
@@ -26,9 +26,9 @@ app.use(Logger());
 
 router.get('/products', products);
 
-// router.get("/products/:id", product);
+router.get('/products/:code', product);
 
-
+app.use(cors());
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3000);
