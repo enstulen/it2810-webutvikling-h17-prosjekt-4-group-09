@@ -1,7 +1,7 @@
 
   <div class="showItem-body">
 
-    <h1 class="top_title">{{ item.name }}</h1>
+    <h1 class="item_title">{{ item.name }}</h1>
 
     <div class="showItem-top">
 
@@ -63,7 +63,7 @@
 
     <div class="showItem-bottom">
 
-      <div class="text-container">
+      <div *ngIf="item.productType" class="text-container">
         <p class="text-top">
             Varetype
         </p>
@@ -71,7 +71,7 @@
             {{ item.productType }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.code" class="text-container">
         <p class="text-top">
             Varenummer
         </p>
@@ -79,7 +79,7 @@
             {{ item.code }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.pricePerLiter" class="text-container">
         <p class="text-top">
             Pris per liter
         </p>
@@ -87,7 +87,7 @@
             {{ item.pricePerLiter }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.color" class="text-container">
         <p class="text-top">
             Farge
         </p>
@@ -95,7 +95,7 @@
             {{ item.color }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.taste" class="text-container">
         <p class="text-top">
             Smak
         </p>
@@ -110,7 +110,7 @@
 
     <div class="showItem-bottom">
 
-      <div class="text-container">
+      <div *ngIf="item.abv" class="text-container">
         <p class="text-top">
             Alkohol
         </p>
@@ -118,7 +118,7 @@
             {{ item.abv }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.acid" class="text-container">
         <p class="text-top">
             Syre
         </p>
@@ -126,7 +126,7 @@
             {{ item.acid }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.sugar" class="text-container">
         <p class="text-top">
             Sukker
         </p>
@@ -141,7 +141,7 @@
 
     <div class="showItem-bottom">
 
-      <div class="text-container">
+      <div *ngIf="item.containerType" class="text-container">
         <p class="text-top">
             Emballasjetype
         </p>
@@ -149,7 +149,7 @@
             {{ item.containerType }}
         </p>
       </div>
-      <div class="text-container">
+      <div *ngIf="item.cork" class="text-container">
         <p class="text-top">
             Kork
         </p>

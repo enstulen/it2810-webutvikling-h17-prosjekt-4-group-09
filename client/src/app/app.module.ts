@@ -17,6 +17,8 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
 import {DataService} from './services/data.service';
 import { CategoryComponent } from './components/category/category.component';
 
+import { CommonModule } from '@angular/common';
+
 const appRoutes: Routes = [
   {path: '', component: ToplistComponent},
   {path: 'categories', component: CategoriesComponent},
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     HttpModule,
     InfiniteScrollModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CommonModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
