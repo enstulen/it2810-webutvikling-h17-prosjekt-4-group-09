@@ -1,101 +1,172 @@
 .topnav {
-  overflow: hidden;
-  background-color: black;
-  height: 70px;
+	overflow: hidden;
+	background-color: black;
+	height: 70px;
 }
-.logo{
-  float: left;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 20px;
+.logo {
+	float: left;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 20px;
 }
 .siteName {
-  margin-left: 15px;
-  float: left;
-  line-height: 70px;
-  color:white;
+	margin-left: 15px;
+	float: left;
+	line-height: 70px;
+	color: white;
 }
 .topnav a {
-  margin-right: 20px;
-  float: right;
-  display: block;
-  color:white;
-  text-align: left;
-  text-decoration: none;
-  line-height: 70px;
+	margin-right: 20px;
+	float: right;
+	display: block;
+	color: white;
+	text-align: left;
+	text-decoration: none;
+	line-height: 70px;
 }
 
 .topnav a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 .topnav .icon {
-  display: none;
+	display: none;
 }
-ul{
-  float: right;
-  display: inline-block;
+ul {
+	float: right;
+	display: inline-block;
 }
-li{
-  float:left;
-  list-style:none;
+li {
+	float: left;
+	list-style: none;
 }
 .searchField {
-  margin-top: 20px;
-  margin-right: 20px;
-  border-radius: 4px;
+	margin-top: 20px;
+	margin-right: 20px;
+	border-radius: 4px;
+}
+.profile {
+	width: 25px;
+	height: 25px;
+	margin-top: 22px;
+	margin-right: 20px;
+	outline: none;
+}
+.login {
+	position: absolute;
+	right: 0;
+	top: 1;
+	background-color: black;
+	width: 300px;
+	z-index: 100;
+	text-align: center;
+}
+.textField {
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	margin: 10px;
+	width: 80%;
+	height: 30px;
+	font-size: 12px;
+}
+.switch-login-button {
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+}
+.switch-login-button:hover {
+	color: gray;
+	text-decoration: none;
+}
+.login-button {
+	display: block;
+	color: white;
+	cursor: pointer;
+	height: 40px;
+	width: 80%;
+	margin-left: 10%;
+	margin: auto;
+	line-height: 40px;
+	border: 1px white solid;
+	border-radius: 4px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-decoration: none;
+}
+.login-button:hover {
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	text-decoration: none;
 }
 
 /* Hide nav-links, image etc and show icon */
 @media screen and (max-width: 1000px) {
-  .searchField {display: none;}
-  .siteName {display: none;}
-  .logo {display: none;}
-  .topnav a {display: none;}
-  .topnav a.icon {
-    margin-left: 15px;
-    float: left;
-    display: block;
-  }
+	.searchField {
+		display: none;
+	}
+	.siteName {
+		display: none;
+	}
+	.logo {
+		display: none;
+	}
+	.topnav a {
+		display: none;
+	}
+	.topnav a.icon {
+		margin-left: 15px;
+		float: left;
+		display: block;
+	}
+}
+@media screen and (max-width: 600px) {
+	.login {
+		width: 100%;
+	}
 }
 
 /* .responsive - after button press */
 @media screen and (max-width: 1000px) {
-  .topnav.responsive {
-    position: relative;
-    height: 100%;
-  }
-  .topnav.responsive .icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  .topnav.responsive ul {
-    margin-top: 50px;
-    float: left;
-    text-align: left;
-  }
-  .topnav.responsive a {
-    width: 100%;
-    float: left;
-    display: block;
-    text-align: left;
-  }
-  .link {
-    margin-left: -30px;
-  }
-  .topnav.responsive li{
-    float:none;
-    display:block;
-  }
-  .topnav.responsive .searchField{
-    float:left;
-    display:block;
-    text-align: left;
-    padding: 0;
-    margin-left: -30px;
-  }
+	.topnav.responsive {
+		position: relative;
+		height: 100%;
+	}
+	.topnav.responsive .icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.topnav.responsive ul {
+		margin-top: 50px;
+		float: left;
+		text-align: left;
+	}
+	.topnav.responsive a {
+		width: 100%;
+		float: left;
+		display: block;
+		text-align: left;
+	}
+	.link {
+		margin-left: -30px;
+	}
+	.topnav.responsive li {
+		float: none;
+		display: block;
+	}
+	.topnav.responsive .searchField {
+		float: left;
+		display: block;
+		text-align: left;
+		padding: 0;
+		margin-left: -30px;
+	}
+	.topnav.responsive .profile {
+		display: none;
+	}
 }

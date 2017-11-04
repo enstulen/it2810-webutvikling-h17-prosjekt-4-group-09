@@ -2,11 +2,33 @@
   <img class="logo" src="../assets/logo/apk_logo_50.png">
   <p class="siteName">Alkohol Per Krone</p>
   <ul>
-    <li><a class="link" routerLink="/" (click)="onClickLink()">TOPPLISTE</a></li>
-    <li><a class="link" routerLink="/categories" (click)="onClickLink()">KATEGORIER</a></li>
-    <li><input class="searchField" type="text"></li>
+    <li>
+      <a class="link" routerLink="/" (click)="onClickLink()">TOPPLISTE</a>
+    </li>
+    <li>
+      <a class="link" routerLink="/categories" (click)="onClickLink()">KATEGORIER</a>
+    </li>
+    <li>
+      <input class="searchField" type="text">
+    </li>
+    <li>
+      <input class="profile" type="image" src="../assets/navigationbar/user.png" (click)="profileButtonPressed()">
+    </li>
   </ul>
-    <a href="javascript:void(0);" style="font-size:20px;" class="icon" (click)="onClickMenu()" >&#9776;</a>
-  </div>
-<router-outlet></router-outlet>
 
+  <a href="javascript:void(0);" style="font-size:20px; 	text-decoration: none;" class="icon" (click)="onClickMenu()">&#9776;</a>
+</div>
+<div class="login" *ngIf="showLogin">
+  <input [(ngModel)]="email" class="textField" placeholder="Epost" type="text">
+  <input [(ngModel)]="password" class="textField" placeholder="Passord" type="text">
+  <input [(ngModel)]="passwordRepeat" *ngIf="!login" class="textField" placeholder="Gjenta passord" type="text">
+  <br>
+  <a href="#" class="switch-login-button" (click)="switchLoginButtonPressed()">
+    {{ login ? "Registrer deg" : "Logg inn"}}
+  </a>
+  <br>
+  <a href="#" class="login-button" (click)="loginButtonPressed()">
+    {{ login ? "Logg inn" : "Registrer deg"}}
+  </a>
+</div>
+<router-outlet></router-outlet>
