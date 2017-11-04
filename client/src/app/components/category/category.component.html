@@ -1,0 +1,20 @@
+<div class="top-container">
+    <h3 class="header">{{categoryNor}}</h3>
+    <p class="sort-by"> Sorter etter: <span><select class="select">
+        <option value="Poeng synkende">Poeng synkende</option>
+        <option value="Poeng stigende">Poeng stigende</option>
+        <option value="Pris synkende">APK synkende</option>
+        <option value="Pris stigende">APK stigende</option>
+      </select></span></p>
+</div>
+<div class="container"
+  infiniteScroll
+  [infiniteScrollDistance]="0"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+    <app-alcohol-item *ngFor="let item of items"
+      [item]="item">
+    </app-alcohol-item>
+</div>
+
