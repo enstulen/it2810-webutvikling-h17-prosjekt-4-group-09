@@ -32,7 +32,7 @@ export class CategoryComponent implements OnInit {
 
 	onScroll() {
 		this.dataService
-			.getCategory(`category/${this.category}`, this.scrollNumber)
+			.getCategory(this.category, this.scrollNumber)
 			.subscribe(items => {
 				for (let i = 0; i < items.length; i++) {
 					this.items.push(items[i]);
@@ -49,7 +49,7 @@ export class CategoryComponent implements OnInit {
 		this.category = this.router.url.split("/")[2];
 		this.categoryNor = this.mapping[this.category];
 		this.dataService
-			.getCategory(`${this.category}`, this.scrollNumber)
+			.getCategory(this.category, this.scrollNumber)
 			.subscribe(items => {
 				this.items = items;
 			});
