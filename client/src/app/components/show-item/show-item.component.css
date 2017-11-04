@@ -57,6 +57,34 @@
 
 }
 
+.showItem-top .item-favourite {
+
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 0;
+  top:0;
+  margin-top: 5px;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.showItem-top .item-favourite img:hover {
+
+  content:url("../../../assets/icons/star3.png");
+
+}
+
+.showItem-top .item-favourite img {
+
+  position: absolute;
+  height: 30px;
+  width: 30px;
+}
+
 .showItem-top .item-points .item-points-text {
   color: white;
   text-align: center;
@@ -66,6 +94,15 @@
 .showItem-body .showItem-top .top-left {
 
   width: 15%;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.showItem-body .showItem-top .top-left img {
+
+  height: 70%;
   margin-left: 0;
 }
 

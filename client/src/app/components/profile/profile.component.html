@@ -1,0 +1,31 @@
+<div class="profile-body">
+
+  <div class="profile-header">
+    <h2>Profil</h2>
+  </div>
+
+  <div class="profile-content">
+
+      <div *ngFor="let item of items" class="profile-item">
+
+        <div class="item-favorite">
+            <img (click)="deFavoriteItem(item)" src="../../../assets/icons/star3.png" />
+        </div>
+
+        <div class="item-text">
+
+            <p>
+              {{ item.name }}
+            </p>
+
+        </div>
+
+        <div class="item-image">
+
+            <img src="{{ item.images.big }}" />
+        </div>
+      </div>
+
+  </div>
+
+</div>

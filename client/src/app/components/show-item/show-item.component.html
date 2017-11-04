@@ -9,6 +9,12 @@
         <h3 class="item-points-text">{{ item.points }}</h3>
       </div>
 
+      <div *ngIf="is_logged_in" (click)="favouriteItem(0,0)" class="item-favourite">
+
+        <img *ngIf="is_favorite" src="../../../assets/icons/star2.png" />
+        <img *ngIf="!is_favorite" src="../../../assets/icons/star3.png" />
+      </div>
+
       <div class="top-left">
 
         <img src="{{ item.images.big }}" />

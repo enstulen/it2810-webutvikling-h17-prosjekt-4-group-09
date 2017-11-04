@@ -12,6 +12,7 @@ import { ToplistComponent } from './components/toplist/toplist.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AlcoholItemComponent } from './components/alcohol-item/alcohol-item.component';
 import { ShowItemComponent } from './components/show-item/show-item.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // Services
 import {DataService} from './services/data.service';
@@ -22,8 +23,9 @@ import { CommonModule } from '@angular/common';
 const appRoutes: Routes = [
   {path: '', component: ToplistComponent},
   {path: 'categories', component: CategoriesComponent},
-  {path: 'item/:id', component: ShowItemComponent},
-  {path: 'category/:name', component: CategoryComponent}
+  {path: 'products/:id', component: ShowItemComponent},
+  {path: 'category/:name', component: CategoryComponent},
+  {path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     CategoriesComponent,
     AlcoholItemComponent,
     ShowItemComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
