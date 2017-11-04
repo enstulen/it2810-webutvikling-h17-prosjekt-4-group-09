@@ -19,6 +19,12 @@ const createSortParameter = (queryValue, acceptedQueryValues) => {
   return parameter;
 };
 
+const createFilterParameter = (field, queryValue) => {
+  const parameter = {};
+  parameter[field] = queryValue;
+  return parameter;
+};
+
 const createParameters = (query, options) => {
   const optionsKeys = Object.keys(options);
   const parameters = {};
@@ -32,7 +38,8 @@ const createParameters = (query, options) => {
         parameters[optionsKeys[i]] = parseInt(query[optionsKeys[i]], 10);
       }
       if (options[optionsKeys[i]].type === String) {
-        parameters[optionsKeys[i]] = parseInt(query[optionsKeys[i]], 10);
+        parameters[optionsKeys[i]] = createFilterParameter(optionsKeys[i], query[optionsKeys[i]],
+          options[optionsKeys[i]].acceptedQueryValues);
       }
     } else {
       if (options[optionsKeys[i]].type === Object) {
