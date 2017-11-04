@@ -152,7 +152,6 @@ vinmonopolet
     app.products.insert(metaProduct);
   })
   .on('end', () => {
-    //addPoints(sortedProducts[0].apk, sortedProducts);
-    
+    // addPoints(sortedProducts[0].apk, sortedProducts);
     console.log('done');
   });

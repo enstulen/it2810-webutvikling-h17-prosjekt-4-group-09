@@ -8,7 +8,7 @@ const products = async (ctx) => {
     ctx.throw(400, 'Invalid format on query, make sure that all fields are valid');
   } else {
     const parameters = createParameters(query, ctx.options);
-    ctx.body = await ctx.app.products.find()
+    ctx.body = await ctx.app.products.find(parameters.category)
       .sort(parameters.sort)
       .skip(parameters.from)
       .limit(parameters.limit)
