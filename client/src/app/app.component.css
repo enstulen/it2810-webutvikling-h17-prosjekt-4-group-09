@@ -34,12 +34,10 @@
 	font-size: 14px;
 }
 .topnav a.active {
-	text-decoration: underline;
 	color: white;
 }
 
 .topnav a:hover {
-	text-decoration: underline;
 	color: white;
 }
 
