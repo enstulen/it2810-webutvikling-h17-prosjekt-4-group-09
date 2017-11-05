@@ -1,7 +1,7 @@
 .topnav {
 	overflow: hidden;
 	background-color: black;
-	height: 70px;
+	height: 50px;
 }
 .logo {
 	float: left;
@@ -11,25 +11,36 @@
 	top: 50%;
 	transform: translateY(-50%);
 	margin-left: 20px;
+	outline: none;
+	cursor: pointer;
 }
 .siteName {
 	margin-left: 15px;
 	float: left;
-	line-height: 70px;
+	line-height: 50px;
 	color: white;
+	font-size: 13px;
+	outline: none;
+	cursor: pointer;
 }
 .topnav a {
 	margin-right: 20px;
 	float: right;
 	display: block;
-	color: white;
+	color: #d6d6d6;
 	text-align: left;
 	text-decoration: none;
-	line-height: 70px;
+	line-height: 50px;
+	font-size: 14px;
+}
+.topnav a.active {
+	text-decoration: underline;
+	color: white;
 }
 
 .topnav a:hover {
 	text-decoration: underline;
+	color: white;
 }
 
 .topnav .icon {
@@ -44,14 +55,19 @@ li {
 	list-style: none;
 }
 .searchField {
-	margin-top: 20px;
+	outline: none;
+	margin-top: 12px;
 	margin-right: 20px;
 	border-radius: 4px;
+	background: url(../assets/navigationbar/search.png) no-repeat right 10px top
+		7px;
+	background-color: white;
+	border: none;
 }
 .profile {
 	width: 25px;
 	height: 25px;
-	margin-top: 22px;
+	margin-top: 12px;
 	margin-right: 20px;
 	outline: none;
 }
@@ -105,7 +121,7 @@ li {
 }
 
 /* Hide nav-links, image etc and show icon */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
 	.searchField {
 		display: none;
 	}
@@ -131,7 +147,7 @@ li {
 }
 
 /* .responsive - after button press */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
 	.topnav.responsive {
 		position: relative;
 		height: 100%;

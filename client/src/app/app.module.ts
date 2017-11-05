@@ -18,13 +18,18 @@ import { ShowItemComponent } from "./components/show-item/show-item.component";
 import { DataService } from "./services/data.service";
 import { CategoryComponent } from "./components/category/category.component";
 
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
+import { MessageService } from "./services/message.service";
+import { SearchComponent } from "./components/search/search.component";
+import { FrontComponent } from "./components/front/front.component";
 
 const appRoutes: Routes = [
-	{ path: "", component: ToplistComponent },
+	{ path: "", component: FrontComponent },
+	{ path: "top", component: ToplistComponent },
 	{ path: "categories", component: CategoriesComponent },
 	{ path: "item/:id", component: ShowItemComponent },
-	{ path: "category/:name", component: CategoryComponent }
+	{ path: "categories/:name", component: CategoryComponent },
+	{ path: "search", component: SearchComponent }
 ];
 
 @NgModule({
@@ -34,7 +39,9 @@ const appRoutes: Routes = [
 		CategoriesComponent,
 		AlcoholItemComponent,
 		ShowItemComponent,
-		CategoryComponent
+		CategoryComponent,
+		SearchComponent,
+		FrontComponent
 	],
 	imports: [
 		BrowserModule,
@@ -44,7 +51,7 @@ const appRoutes: Routes = [
 		NgbModule.forRoot(),
 		RouterModule.forRoot(appRoutes)
 	],
-	providers: [DataService],
+	providers: [DataService, MessageService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

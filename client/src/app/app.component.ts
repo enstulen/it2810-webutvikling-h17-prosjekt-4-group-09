@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { MessageService } from "./services/message.service";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-root",
@@ -14,6 +16,17 @@ export class AppComponent {
 	email: string;
 	password: string;
 	passwordRepeat: string;
+
+	searchString: string;
+
+	constructor(private messageService: MessageService, private router: Router) {}
+
+	searchChange(newValue) {
+		this.router.navigate(["/search"]);
+		this.searchString = newValue;
+		this.messageService.sendMessage(this.searchString);
+		console.log(this.searchString);
+	}
 
 	onClickMenu() {
 		this.showLogin = false;
