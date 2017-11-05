@@ -148,7 +148,9 @@ vinmonopolet
     metaProduct.images.big = bigImageURL(metaProduct.code);
     metaProduct.apk = calculateAPK(metaProduct.price, metaProduct.containerSize, metaProduct.abv);
     metaProduct.category = getCategory(Object.keys(APK_CATEGORIES), metaProduct.productType);
-    metaProduct.points = 87;
+    metaProduct.points = calculatePoints(1.27, metaProduct.apk);
+    metaProduct.lowercase = metaProduct.name.toLowerCase();
+    metaProduct.noaccent = metaProduct.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     app.products.insert(metaProduct);
   })
   .on('end', () => {
