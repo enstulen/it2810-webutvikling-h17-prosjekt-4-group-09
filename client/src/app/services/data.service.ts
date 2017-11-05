@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
-import "rxjs/add/operator/map";
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
 	itemsPerPage = 25;
 
 	constructor(public http: Http) {
-		console.log("Data service connected");
+		console.log('Data service connected');
 	}
 
 	getTopListItems(page) {
@@ -36,6 +36,12 @@ export class DataService {
 		console.log(this.http.get(`http://api.jowies.com/barcode/${id}`));
 		return this.http
 			.get(`http://api.jowies.com/barcode/${id}`)
+			.map(res => res.json());
+	}
+
+	search(subString) {
+		return this.http
+			.get(`http://it2810-09.idi.ntnu.no:3000/products?search=${subString}`)
 			.map(res => res.json());
 	}
 }

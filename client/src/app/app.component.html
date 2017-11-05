@@ -1,15 +1,18 @@
 <div class="topnav" id="myTopnav">
-  <img class="logo" src="../assets/logo/apk_logo_50.png">
-  <p class="siteName">Alkohol Per Krone</p>
+  <img class="logo" src="../assets/logo/apk_logo_50.png" routerLink="/" (click)="onClickLink()">
+  <p class="siteName" routerLink="/" (click)="onClickLink()  ">Alkohol Per Krone</p>
   <ul>
     <li>
-      <a class="link" routerLink="/" (click)="onClickLink()">TOPPLISTE</a>
+      <a class="link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="onClickLink()">HJEM</a>
     </li>
     <li>
-      <a class="link" routerLink="/categories" (click)="onClickLink()">KATEGORIER</a>
+      <a class="link" routerLink="/top" routerLinkActive="active" (click)="onClickLink()">TOPPLISTE</a>
     </li>
     <li>
-      <input class="searchField" type="text">
+      <a class="link" routerLink="/categories" routerLinkActive="active" (click)="onClickLink()">KATEGORIER</a>
+    </li>
+    <li>
+      <input class="searchField" type="text" [ngModel]="searchString" (ngModelChange)="searchChange($event)">
     </li>
     <li>
       <input class="profile" type="image" src="../assets/navigationbar/user.png" (click)="profileButtonPressed()">

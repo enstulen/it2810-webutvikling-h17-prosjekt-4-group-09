@@ -1,0 +1,68 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	flex-flow: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.text-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+	padding: 10%;
+}
+.image-container {
+	flex: 1;
+	margin-top: 30px;
+}
+.header {
+	padding-top: 50px;
+	font-size: 60px;
+}
+.sub-header {
+	color: #909090;
+	padding-top: 20px;
+}
+
+.app-image {
+	max-height: 500px;
+	display: block;
+	margin: auto;
+}
+.app-store-container {
+	display: flex;
+	flex-direction: row;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	align-items: center;
+}
+.app-store {
+	height: 50px;
+}
+.google-play {
+	margin-top: -1px;
+	height: 51px;
+	margin-right: 30px;
+}
+
+@media screen and (max-width: 783px) {
+	.header {
+		padding-top: 0px;
+		text-align: center;
+	}
+	.sub-header {
+		text-align: center;
+	}
+	.text-container {
+		padding-bottom: 0px;
+	}
+	.app-store-container {
+		justify-content: center;
+	}
+	.app-image {
+		padding: 0px;
+		margin-top: 0px;
+	}
+}
