@@ -42,4 +42,9 @@ export default {
       'mjod',
     ],
   },
+  search: {
+    type: 'search',
+    defaultValue: {},
+  },
+
 };

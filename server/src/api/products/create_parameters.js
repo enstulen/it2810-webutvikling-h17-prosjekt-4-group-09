@@ -25,6 +25,14 @@ const createFilterParameter = (field, queryValue) => {
   return parameter;
 };
 
+const createSearchParameter = (string) => {
+  return { $or: [
+    { name: { $regex: string, $options: 'i' } },
+    { noaccent: { $regex: string, $options: 'i' } },
+    { lowercase: { $regex: string, $options: 'i' } },
+  ] };
+};
+
 const createParameters = (query, options) => {
   const optionsKeys = Object.keys(options);
   const parameters = {};
@@ -41,6 +49,9 @@ const createParameters = (query, options) => {
         parameters[optionsKeys[i]] = createFilterParameter(optionsKeys[i], query[optionsKeys[i]],
           options[optionsKeys[i]].acceptedQueryValues);
       }
+      if (options[optionsKeys[i]].type === 'search') {
+        parameters[optionsKeys[i]] = createSearchParameter(query[optionsKeys[i]]);
+      }
     } else {
       if (options[optionsKeys[i]].type === Object) {
         parameters[optionsKeys[i]] = options[optionsKeys[i]].defaultValue;
@@ -48,11 +59,15 @@ const createParameters = (query, options) => {
       if (options[optionsKeys[i]].type === Number) {
         parameters[optionsKeys[i]] = options[optionsKeys[i]].defaultValue;
       }
-      if (options[optionsKeys[i]].type === Number) {
+      if (options[optionsKeys[i]].type === String) {
+        parameters[optionsKeys[i]] = options[optionsKeys[i]].defaultValue;
+      }
+      if (options[optionsKeys[i]].type === 'search') {
         parameters[optionsKeys[i]] = options[optionsKeys[i]].defaultValue;
       }
     }
   }
+  parameters.find = Object.assign(parameters.category, parameters.search);
   return parameters;
 };
 
