@@ -67,7 +67,8 @@ const createParameters = (query, options) => {
       }
     }
   }
-  parameters.find = Object.assign(parameters.category, parameters.search);
+  parameters.find = {};
+  Object.assign(parameters.find, parameters.category, parameters.search);
   return parameters;
 };
 

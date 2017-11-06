@@ -19,6 +19,7 @@
     "koa-mount": "^3.0.0",
     "koa-router": "^7.2.1",
     "mongodb": "^2.2.33",
+    "request": "^2.83.0",
     "vinmonopolet": "^3.1.2"
   },
   "devDependencies": {
