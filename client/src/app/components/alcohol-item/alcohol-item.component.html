@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" (click)="goToItem(item.code)">
     <div class="item" routerLink="/">
       <div class="item-points">
         <h3 class="item-points-text">{{item.points}}</h3>
@@ -21,7 +21,10 @@
               <p class="item-text-flex-item-subheader">Procent/cl</p>
           </div>
       </div>
-      <button (click)="goToItem(item.barcode)" class="item-button">KJØP NÅ</button>
+
+      <form action="{{ item.url }}">
+        <button onclick="event.stopPropagation();" class="item-button" type="submit">KJØP NÅ</button>
+      </form>
 
     </div>
 </div>

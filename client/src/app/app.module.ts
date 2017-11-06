@@ -10,11 +10,12 @@ import { AgmCoreModule } from '@agm/core';
 import { NgModule, ApplicationRef } from '@angular/core';
 
 // Components
-import { AppComponent } from "./app.component";
-import { ToplistComponent } from "./components/toplist/toplist.component";
-import { CategoriesComponent } from "./components/categories/categories.component";
-import { AlcoholItemComponent } from "./components/alcohol-item/alcohol-item.component";
-import { ShowItemComponent } from "./components/show-item/show-item.component";
+import { AppComponent } from './app.component';
+import { ToplistComponent } from './components/toplist/toplist.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { AlcoholItemComponent } from './components/alcohol-item/alcohol-item.component';
+import { ShowItemComponent } from './components/show-item/show-item.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // Services
 import { AboutPageComponent } from './components/about-page/about-page.component';
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
 	{ path: "categories", component: CategoriesComponent },
 	{ path: "item/:id", component: ShowItemComponent },
 	{ path: "categories/:name", component: CategoryComponent },
-	{ path: "search", component: SearchComponent },
+	{path: 'profile', component: ProfileComponent},
   {path: 'about', component: AboutPageComponent},
 ];
 
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
 		CategoryComponent,
 		SearchComponent,
 		FrontComponent,
-		AboutPageComponent
+		ProfileComponent
 	],
 	imports: [
 		BrowserModule,

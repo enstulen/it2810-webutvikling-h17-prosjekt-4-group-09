@@ -35,12 +35,25 @@ export class DataService {
  }
 
 	getSpecificItem(id) {
-		// id = "5060154910315"
-		console.log(this.http.get(`http://api.jowies.com/barcode/${id}`));
-		return this.http
-			.get(`http://api.jowies.com/barcode/${id}`)
-			.map(res => res.json());
-	}
+    //id = "5060154910315"
+    //http://it2810-09.idi.ntnu.no:3000/products/9891001
+    var url = `http://it2810-09.idi.ntnu.no:3000/products/${id}`;
+   return this.http.get(url)
+   .map(res => res.json());
+
+  }
+
+  getFavoriteItems(user_id) {
+
+    //return this.http.get('http://api.jowies.com/barcode/${user_id}').map(res => res.json());
+    // DENNE MÅ ENDRES  PÅ FOR Å HENTE BRUKERENS API
+    return this.http.get('http://api.jowies.com/category/beer/1').map(res => res.json());
+  }
+
+  defavoriteItem(item_id, user_id) {
+
+
+  }
 
 	search(subString) {
 		return this.http
