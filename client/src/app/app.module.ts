@@ -34,6 +34,8 @@ const appRoutes: Routes = [
 	{ path: "categories/:name", component: CategoryComponent },
 	{path: 'profile', component: ProfileComponent},
   {path: 'about', component: AboutPageComponent},
+	{path: 'search', component: SearchComponent},
+
 ];
 
 @NgModule({
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
 		CategoryComponent,
 		SearchComponent,
 		FrontComponent,
-		ProfileComponent
+		ProfileComponent,
+		AboutPageComponent
 	],
 	imports: [
 		BrowserModule,
