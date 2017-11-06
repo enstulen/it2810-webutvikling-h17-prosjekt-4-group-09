@@ -8,11 +8,12 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FormsModule } from "@angular/forms";
 
 // Components
-import { AppComponent } from "./app.component";
-import { ToplistComponent } from "./components/toplist/toplist.component";
-import { CategoriesComponent } from "./components/categories/categories.component";
-import { AlcoholItemComponent } from "./components/alcohol-item/alcohol-item.component";
-import { ShowItemComponent } from "./components/show-item/show-item.component";
+import { AppComponent } from './app.component';
+import { ToplistComponent } from './components/toplist/toplist.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { AlcoholItemComponent } from './components/alcohol-item/alcohol-item.component';
+import { ShowItemComponent } from './components/show-item/show-item.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // Services
 import { DataService } from "./services/data.service";
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
 	{ path: "categories", component: CategoriesComponent },
 	{ path: "item/:id", component: ShowItemComponent },
 	{ path: "categories/:name", component: CategoryComponent },
-	{ path: "search", component: SearchComponent }
+	{ path: "search", component: SearchComponent },
+	{path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
 		ShowItemComponent,
 		CategoryComponent,
 		SearchComponent,
-		FrontComponent
+		FrontComponent,
+		ProfileComponent
 	],
 	imports: [
 		BrowserModule,
