@@ -22,4 +22,9 @@ export class AlcoholItemComponent implements OnInit {
     this.router.navigate(['/products', id], id);
   }
 
+  buyItem(url) {
+
+    
+  }
+
 }
