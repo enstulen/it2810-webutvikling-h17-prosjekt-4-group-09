@@ -41,21 +41,6 @@ export class ToplistComponent implements OnInit {
 		console.log("APK stigende");
 	}
 
-	getDecreasingPrice(){
-		console.log("pris synkende");
-	}
-
-	getIncreasingPrice(){
-		console.log("pris stigende");
-	}
-
-	getDecreasingAPK(){
-		console.log("APK synkende");
-	}
-
-	getIncreasingAPK(){
-		console.log("APK stigende");
-	}
 
 	ngOnInit() {
 		this.dataService.getTopListItems(1).subscribe(items => {
