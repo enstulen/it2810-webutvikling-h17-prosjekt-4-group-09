@@ -5,8 +5,9 @@
     <li>
       <a class="link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="onClickLink()">HJEM</a>
     </li>
-    <li><a class="link" routerLink="/about" (click)="onClickLink()">OM</a></li>
-
+    <li>
+      <a class="link" routerLink="/about" routerLinkActive="active" (click)="onClickLink()">OM</a>
+    </li>
     <li>
       <a class="link" routerLink="/top" routerLinkActive="active" (click)="onClickLink()">TOPPLISTE</a>
     </li>
