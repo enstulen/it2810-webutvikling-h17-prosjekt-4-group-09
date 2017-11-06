@@ -25,6 +25,22 @@ export class ToplistComponent implements OnInit {
 		this.scrollNumber = 2;
 	}
 
+	getDecreasingPrice(){
+		console.log("pris synkende");
+	}
+
+	getIncreasingPrice(){
+		console.log("pris stigende");
+	}
+
+	getDecreasingAPK(){
+		console.log("APK synkende");
+	}
+
+	getIncreasingAPK(){
+		console.log("APK stigende");
+	}
+
 	ngOnInit() {
 		this.dataService.getTopListItems(1).subscribe(items => {
 			this.items = items;

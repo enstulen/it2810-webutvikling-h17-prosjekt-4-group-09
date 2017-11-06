@@ -1,10 +1,10 @@
 <div class="top-container">
     <h3 class="header">Toppliste</h3>
     <p class="sort-by"> Sorter etter: <span><select class="select">
-        <option value="Poeng synkende">Poeng synkende</option>
-        <option value="Poeng stigende">Poeng stigende</option>
-        <option value="APK synkende">APK synkende</option>
-        <option value="APK stigende">APK stigende</option>
+        <option value="Pris synkende" (click)="getDecreasingPrice()">Pris synkende</option>
+        <option value="Pris stigende" (click)="getIncreasingPrice()">Pris stigende</option>
+        <option value="APK synkende" (click)="getDecreasingAPK()">APK synkende</option>
+        <option value="APK stigende" (click)="getIncreasingAPK()">APK stigende</option>
       </select></span></p>
 </div>
 <div class="container"
@@ -12,7 +12,7 @@
   [infiniteScrollDistance]="0"
   [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()">
-  
+
     <app-alcohol-item *ngFor="let item of items"
       [item]="item">
     </app-alcohol-item>
