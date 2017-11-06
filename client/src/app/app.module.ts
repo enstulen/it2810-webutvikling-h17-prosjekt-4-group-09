@@ -1,11 +1,13 @@
 // Modules
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
 import { HttpModule } from "@angular/http";
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 
 // Components
 import { AppComponent } from "./app.component";
@@ -15,10 +17,10 @@ import { AlcoholItemComponent } from "./components/alcohol-item/alcohol-item.com
 import { ShowItemComponent } from "./components/show-item/show-item.component";
 
 // Services
+import { AboutPageComponent } from './components/about-page/about-page.component';
 import { DataService } from "./services/data.service";
 import { CategoryComponent } from "./components/category/category.component";
 
-import { CommonModule } from "@angular/common";
 import { MessageService } from "./services/message.service";
 import { SearchComponent } from "./components/search/search.component";
 import { FrontComponent } from "./components/front/front.component";
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
 	{ path: "categories", component: CategoriesComponent },
 	{ path: "item/:id", component: ShowItemComponent },
 	{ path: "categories/:name", component: CategoryComponent },
-	{ path: "search", component: SearchComponent }
+	{ path: "search", component: SearchComponent },
+  {path: 'about', component: AboutPageComponent},
 ];
 
 @NgModule({
@@ -41,7 +44,8 @@ const appRoutes: Routes = [
 		ShowItemComponent,
 		CategoryComponent,
 		SearchComponent,
-		FrontComponent
+		FrontComponent,
+		AboutPageComponent
 	],
 	imports: [
 		BrowserModule,
@@ -49,9 +53,13 @@ const appRoutes: Routes = [
 		FormsModule,
 		InfiniteScrollModule,
 		NgbModule.forRoot(),
-		RouterModule.forRoot(appRoutes)
+		RouterModule.forRoot(appRoutes),
+		AgmCoreModule.forRoot({
+			apiKey: 'AIzaSyCdLQc1B1sfmniQbYHwDaf7moQ5ZXt62BA'
+		})
 	],
 	providers: [DataService, MessageService],
 	bootstrap: [AppComponent]
+
 })
 export class AppModule {}
