@@ -26,6 +26,7 @@ export class ToplistComponent implements OnInit {
     this.scrollNumber = 1;
   }
 
+
   ngOnInit() {
     this.dataService.getTopListItems(0).subscribe(items => {
       this.items = items;

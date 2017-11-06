@@ -1,0 +1,53 @@
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item {
+    margin: 10px;
+}
+
+.header1 {
+    flex: 1;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.header1 h1{
+    font-size: 60px;
+    font-weight: lighter;
+}
+
+.text {
+    flex: 1;
+
+}
+
+.text p{
+    text-align: center;
+    font-weight: lighter;
+
+}
+
+.header2 {
+    flex: 1;
+}
+
+.header2 h2{
+    font-size: 60px;
+    font-weight: lighter;
+}
+
+.map {
+    flex: 4;
+    margin: 20px;
+    margin-bottom: 60px;
+}
+
+agm-map {
+  height: 600px;
+  width: 1000px;
+}

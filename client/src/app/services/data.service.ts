@@ -10,9 +10,32 @@ export class DataService {
    }
 
    getTopListItems(page) {
+     console.log("yoyo");
     return this.http.get(`http://api.jowies.com/top/${page}`)
     .map(res => res.json());
   }
+
+  getItemsByDescendingPoints(page) {
+   return this.http.get(`http://it2810-09.idi.ntnu.no:3000/products?sort=-apk${page}`)
+   .map(res => res.json());
+  }
+
+  getItemsByIncreasingPoints(page) {
+    console.log("shallabais");
+   return this.http.get(`http://it2810-09.idi.ntnu.no:3000/products?sort=apk${page}`)
+   .map(res => res.json());
+  }
+
+  getItemsByDescendingPrice(page) {
+   return this.http.get(`http://it2810-09.idi.ntnu.no:3000/products?sort=-price${page}`)
+   .map(res => res.json());
+  }
+
+  getItemsByIncreasingPrice(page) {
+   return this.http.get(`http://it2810-09.idi.ntnu.no:3000/products?sort=price${page}`)
+   .map(res => res.json());
+  }
+
   getCategory(category, page) {
     return this.http.get(`http://api.jowies.com/${category}/${page}`)
     .map(res => res.json());
