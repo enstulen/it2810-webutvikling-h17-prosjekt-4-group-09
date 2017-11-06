@@ -21,6 +21,21 @@ export class SearchComponent implements OnInit {
 		private messageService: MessageService,
 		private dataService: DataService
 	) {
+		this.scrollNumber = 2;
+	}
+
+	onScroll() {
+		this.dataService
+			.search(this.message.text, this.scrollNumber)
+			.subscribe(items => {
+				for (let i = 0; i < items.length; i++) {
+					this.items.push(items[i]);
+				}
+				this.scrollNumber += 1;
+			});
+	}
+
+	ngOnInit() {
 		// subscribe to home component messages
 		this.subscription = this.messageService.getMessage().subscribe(message => {
 			this.showInfoHeader = false;
@@ -28,14 +43,14 @@ export class SearchComponent implements OnInit {
 			if (this.sub) {
 				this.sub.unsubscribe();
 			}
-			this.sub = this.dataService.search(this.message.text).subscribe(items => {
-				if (items.length === 0) {
-					this.showInfoHeader = true;
-				}
-				this.items = items;
-			});
+			this.sub = this.dataService
+				.search(this.message.text, 1)
+				.subscribe(items => {
+					if (items.length === 0) {
+						this.showInfoHeader = true;
+					}
+					this.items = items;
+				});
 		});
 	}
-
-	ngOnInit() {}
 }

@@ -22,7 +22,7 @@ export class ToplistComponent implements OnInit {
 	}
 
 	constructor(private dataService: DataService) {
-		this.scrollNumber = 1;
+		this.scrollNumber = 2;
 	}
 
 	ngOnInit() {
