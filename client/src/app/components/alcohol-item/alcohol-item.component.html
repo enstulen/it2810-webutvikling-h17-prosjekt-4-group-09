@@ -1,5 +1,5 @@
 <div class="container" (click)="goToItem(item.code)">
-    <div class="item" routerLink="/">
+    <div class="item">
       <div class="item-points">
         <h3 class="item-points-text">{{item.points}}</h3>
       </div>
@@ -22,9 +22,9 @@
           </div>
       </div>
 
-      <form action="{{ item.url }}">
+      <a href="{{ item.url }}">
         <button onclick="event.stopPropagation();" class="item-button" type="submit">KJØP NÅ</button>
-      </form>
+      </a>
 
     </div>
 </div>

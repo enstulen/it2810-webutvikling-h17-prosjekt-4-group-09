@@ -42,16 +42,14 @@ export class CategoryComponent implements OnInit {
 	}
 
 	constructor(private dataService: DataService, private router: Router) {
-		this.scrollNumber = 1;
+		this.scrollNumber = 2;
 	}
 
 	ngOnInit() {
 		this.category = this.router.url.split("/")[2];
 		this.categoryNor = this.mapping[this.category];
-		this.dataService
-			.getCategory(this.category, this.scrollNumber)
-			.subscribe(items => {
-				this.items = items;
-			});
+		this.dataService.getCategory(this.category, 1).subscribe(items => {
+			this.items = items;
+		});
 	}
 }
