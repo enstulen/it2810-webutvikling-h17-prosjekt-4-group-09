@@ -10,22 +10,20 @@ export class DataService {
 		console.log("Data service connected");
 	}
 
-	getTopListItems(page) {
-		const to = page * this.itemsPerPage;
+	getTopListItems(page, sort) {
 		const from = page * this.itemsPerPage - this.itemsPerPage;
 		return this.http
 			.get(
-				`http://it2810-09.idi.ntnu.no:3000/products?from=${from}&limit=${to}&sort=-apk`
+				`http://it2810-09.idi.ntnu.no:3000/products?from=${from}&limit=${this.itemsPerPage}&sort=${sort}`
 			)
 			.map(res => res.json());
 	}
 
-	getCategory(category, page) {
-		const to = page * this.itemsPerPage;
+	getCategory(category, page, sort) {
 		const from = page * this.itemsPerPage - this.itemsPerPage;
 		return this.http
 			.get(
-				`http://it2810-09.idi.ntnu.no:3000/products?category=${category}&from=${from}&limit=${to}&sort=-apk`
+				`http://it2810-09.idi.ntnu.no:3000/products?category=${category}&from=${from}&limit=${this.itemsPerPage}&sort=${sort}`
 			)
 			.map(res => res.json());
 	}
@@ -52,12 +50,11 @@ export class DataService {
 
 	defavoriteItem(item_id, user_id) {}
 
-	search(subString, page) {
-		const to = page * this.itemsPerPage;
+	search(subString, page, sort) {
 		const from = page * this.itemsPerPage - this.itemsPerPage;
 		return this.http
 			.get(
-				`http://it2810-09.idi.ntnu.no:3000/products?search=${subString}&from=${from}&limit=${to}&sort=-apk`
+				`http://it2810-09.idi.ntnu.no:3000/products?search=${subString}&from=${from}&limit=${this.itemsPerPage}&sort=${sort}`
 			)
 			.map(res => res.json());
 	}
