@@ -17,7 +17,6 @@ const products = async (ctx) => {
 };
 
 const product = async (ctx) => {
-  console.log({ code: ctx.params.code });
   ctx.body = await ctx.app.products.findOne({ code: ctx.params.code });
 };
 
