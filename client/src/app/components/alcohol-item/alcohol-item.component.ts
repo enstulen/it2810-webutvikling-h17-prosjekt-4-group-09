@@ -19,12 +19,8 @@ export class AlcoholItemComponent implements OnInit {
 
   goToItem(id) {
 
+    console.log("TEST");
     this.router.navigate(['/products', id], id);
-  }
-
-  buyItem(url) {
-
-    
   }
 
 }

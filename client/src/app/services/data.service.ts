@@ -18,9 +18,9 @@ export class DataService {
 		return this.http
 			.get(
 				`http://it2810-09.idi.ntnu.no:3000/products?from=${from}&limit=${to}&sort=-apk`
-			)
-			.map(res => res.json());
+			).map(res => res.json());
 	}
+
 	getCategory(category, page) {
 		const to = page * this.itemsPerPage;
 		const from = page * this.itemsPerPage - this.itemsPerPage;

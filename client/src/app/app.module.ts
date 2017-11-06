@@ -28,7 +28,7 @@ const appRoutes: Routes = [
 	{ path: "", component: FrontComponent },
 	{ path: "top", component: ToplistComponent },
 	{ path: "categories", component: CategoriesComponent },
-	{ path: "item/:id", component: ShowItemComponent },
+	{ path: "products/:id", component: ShowItemComponent },
 	{ path: "categories/:name", component: CategoryComponent },
 	{ path: "search", component: SearchComponent },
 	{path: 'profile', component: ProfileComponent},
