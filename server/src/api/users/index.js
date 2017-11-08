@@ -8,6 +8,7 @@ const isUser = async (username, ctx) => ctx.app.users.findOne({ username });
 
 const registerUser = async (ctx) => {
   const user = ctx.request.body;
+  console.log(user);
   if (await isUser(user.username, ctx)) {
     ctx.response.status = 409;
   } else {
