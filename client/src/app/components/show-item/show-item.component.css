@@ -39,6 +39,7 @@
     overflow: visible;
     position: relative;
     margin-bottom: 40px;
+    margin-top: 40px;
     border-radius: 8px;
 
 }
@@ -72,10 +73,14 @@
   flex-direction: column;
 }
 
-.showItem-top .item-favourite img:hover {
+.showItem-top .item-favourite .not_fav:hover {
 
   content:url("../../../assets/icons/star3.png");
 
+}
+
+.showItem-top .item-favourite .fav:hover {
+  content:url("../../../assets/icons/star2.png");
 }
 
 .showItem-top .item-favourite img {

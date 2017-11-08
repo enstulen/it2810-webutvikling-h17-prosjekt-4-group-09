@@ -26,11 +26,42 @@ export class ShowItemComponent implements OnInit {
       this.item = item;
       this.apkValue = Math.round(((item.abv * (item.containerSize * 10)) / item.price) * 100) / 100;
 
+      const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI';
+      this.dataService.getFavItem(this.item._id, token).subscribe( item => {
+
+        console.log(item.text());
+        if (item.text() === 'true') {
+
+          this.is_favorite = true;
+        } else {
+
+          this.is_favorite = false;
+        }
+
+      });
+
     });
+
   }
 
-  favouriteItem() {
+  favouriteItem(item_id) {
 
-    this.is_favorite = !this.is_favorite;
+    if (!this.is_favorite) {
+
+      const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI";
+      this.dataService.favoriteItem(item_id, token).subscribe(response => {
+        console.log(response);
+
+      });
+      this.is_favorite = !this.is_favorite;
+    } else {
+
+      const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI";
+      this.dataService.defavoriteItem(item_id, token).subscribe(response => {
+        console.log(response);
+      });
+      this.is_favorite = !this.is_favorite;
+    }
   }
+
 }

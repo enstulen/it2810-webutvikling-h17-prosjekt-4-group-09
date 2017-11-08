@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
+import { Http, RequestOptions, Response , Headers } from "@angular/http";
 import "rxjs/add/operator/map";
 
 @Injectable()
@@ -38,19 +38,85 @@ export class DataService {
 	getSpecificItem(id) {
 		// id = "5060154910315"
 		// http://it2810-09.idi.ntnu.no:3000/products/9891001
-		var url = `http://it2810-09.idi.ntnu.no:3000/products/${id}`;
+		const url = `http://it2810-09.idi.ntnu.no:3000/products/${id}`;
 		return this.http.get(url).map(res => res.json());
 	}
 
-	getFavoriteItems(user_id) {
+	getFavoriteItems(user_token) {
 		// return this.http.get('http://api.jowies.com/barcode/${user_id}').map(res => res.json());
 		// DENNE MÅ ENDRES  PÅ FOR Å HENTE BRUKERENS API
+		/*return this.http
+			.get('http://it2810-09.idi.ntnu.no:3000/favorites')
+			.map(res => res.json());*/
+
+		const url = 'http://it2810-09.idi.ntnu.no:3000/favorites';
+		const headers = new Headers({
+
+			'Content-Type': 'application/json',
+			'token': user_token,
+			'Authorization': user_token,
+
+		});
+		const options = new RequestOptions({ headers: headers });
 		return this.http
-			.get('http://api.jowies.com/category/beer/1')
-			.map(res => res.json());
+		.get(url, options)
+		.map((res: Response) => res.json());
 	}
 
-	defavoriteItem(item_id, user_id) {}
+	defavoriteItem(item_id, user_token) {
+
+	    console.log('TESTETSTSTS');
+			const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
+      const headers = new Headers({
+
+        'Content-Type': 'application/json',
+        'token': user_token,
+        'Authorization': user_token,
+
+      });
+
+      const options = new RequestOptions({ headers: headers });
+      return this.http
+      .delete(url, options)
+      .map((res: Response) => res);
+	}
+
+	favoriteItem(item_id, user_token) {
+
+			const body: any = {};
+			const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
+			const headers = new Headers({
+
+				'Content-Type': 'application/json',
+				'token': user_token,
+				'Authorization': user_token,
+
+			});
+			const options = new RequestOptions({ headers: headers });
+			return this.http
+			.post(url, body, options)
+			.map((res: Response) => res);
+
+			//this.http.post("http://it2810-09.idi.ntnu.no:3000/favorites/" + item_id, { headers:user_token, }).subscribe();
+	}
+
+	getFavItem(item_id, user_token) {
+
+		console.log('TESTETSTT');
+		const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
+		const headers = new Headers({
+
+			'Content-Type': 'application/json',
+			'token': user_token,
+			'Authorization': user_token,
+
+		});
+		const options = new RequestOptions({ headers: headers });
+		return this.http
+		.get(url, options)
+		.map((res: Response) => res);
+
+	}
 
 	search(subString, page) {
 		const to = page * this.itemsPerPage;

@@ -1,4 +1,5 @@
 export interface Item {
+  _id: string;
   abv: number;
   acid: number;
   ageLimit: number;

@@ -9,10 +9,10 @@
         <h3 class="item-points-text">{{ item.points }}</h3>
       </div>
 
-      <div *ngIf="is_logged_in" (click)="favouriteItem(0,0)" class="item-favourite">
+      <div *ngIf="is_logged_in" (click)="favouriteItem(item._id)" class="item-favourite">
 
-        <img *ngIf="is_favorite" src="../../../assets/icons/star2.png" />
-        <img *ngIf="!is_favorite" src="../../../assets/icons/star3.png" />
+        <img class="not_fav" *ngIf="!is_favorite" src="../../../assets/icons/star2.png" />
+        <img class="fav" *ngIf="is_favorite" src="../../../assets/icons/star3.png" />
       </div>
 
       <div class="top-left">
@@ -55,9 +55,9 @@
 
         <div class="top-right-bottom">
 
-            <a href="{{ item.url }}">
+            <a href="{{ item.url }">
 
-                <input type="submit" value="KJØP NÅ">
+                <input type="submit" value="KJØP NÅ" />
             </a>
 
         </div>

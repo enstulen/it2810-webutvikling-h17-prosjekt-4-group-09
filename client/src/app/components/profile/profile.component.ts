@@ -18,8 +18,15 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dataService.getFavoriteItems(this.user_id).subscribe(items => {
+    const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI";
+    this.getItems(token);
+  }
 
+  getItems(token) {
+
+    this.dataService.getFavoriteItems(token).subscribe(items => {
+
+        console.log(items);
         this.items = items;
     });
 
@@ -27,11 +34,14 @@ export class ProfileComponent implements OnInit {
 
   deFavoriteItem(item) {
 
-    var index = this.items.indexOf(item);
+    const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI";
+
+    this.dataService.defavoriteItem(item._id, token).subscribe(response => {
+        console.log(response);
+
+    });
+    const index = this.items.indexOf(item);
     this.items.splice(index, 1);
-
-    this.dataService.defavoriteItem(0,0);
-
   }
 
 }
