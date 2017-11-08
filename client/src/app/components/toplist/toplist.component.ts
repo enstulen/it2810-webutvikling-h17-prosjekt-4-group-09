@@ -11,9 +11,12 @@ import { DataService } from "../../services/data.service";
 export class ToplistComponent implements OnInit {
 	items: [Item];
 	scrollNumber: number;
+	selectSort = "APK synkende";
+	sort: string;
+
 
 	onScroll() {
-		this.dataService.getTopListItems(this.scrollNumber).subscribe(items => {
+		this.dataService.getTopListItems(this.scrollNumber, this.sort).subscribe(items => {
 			for (let i = 0; i < items.length; i++) {
 				this.items.push(items[i]);
 			}
@@ -23,10 +26,32 @@ export class ToplistComponent implements OnInit {
 
 	constructor(private dataService: DataService) {
 		this.scrollNumber = 2;
+		this.sort = "-apk";
 	}
 
+	valueChange(){
+		if (this.selectSort == "Pris synkende"){
+			this.sort = "-price";
+		}
+		else if (this.selectSort == "Pris stigende"){
+			this.sort = "price";
+		}
+		else if(this.selectSort == "APK synkende"){
+			this.sort = "-apk";
+		}
+		else if (this.selectSort == "APK stigende") {
+			this.sort = "apk";
+		}
+
+
+		this.dataService.getTopListItems(1, this.sort).subscribe(items => {
+			this.items = items;
+		});
+	}
+
+
 	ngOnInit() {
-		this.dataService.getTopListItems(1).subscribe(items => {
+		this.dataService.getTopListItems(1, this.sort).subscribe(items => {
 			this.items = items;
 		});
 	}

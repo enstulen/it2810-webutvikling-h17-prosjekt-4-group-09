@@ -16,23 +16,59 @@ export class SearchComponent implements OnInit {
 	scrollNumber: number;
 	showInfoHeader = false;
 	sub: any;
+	selectSort = "APK synkende";
+	sort: string;
 
 	constructor(
 		private messageService: MessageService,
 		private dataService: DataService
 	) {
 		this.scrollNumber = 2;
+		this.sort = "-apk";
 	}
 
 	onScroll() {
 		this.dataService
-			.search(this.message.text, this.scrollNumber)
+			.search(this.message.text, this.scrollNumber, this.sort)
 			.subscribe(items => {
 				for (let i = 0; i < items.length; i++) {
 					this.items.push(items[i]);
 				}
 				this.scrollNumber += 1;
 			});
+	}
+
+	valueChange(){
+		console.log(this.selectSort);
+		if (this.selectSort == "Pris synkende"){
+			this.sort = "-price";
+		}
+
+		else if (this.selectSort == "Pris stigende"){
+			this.sort = "price";
+			console.log("Dette er stigende");
+		}
+		else if(this.selectSort == "APK synkende"){
+			this.sort = "-apk";
+			console.log("Dette er  APK synkende");
+		}
+		else if (this.selectSort == "APK stigende") {
+			this.sort = "apk";
+			console.log("Dette er APK stigende");
+		}
+
+		this.dataService
+			.search(this.message.text, 1, this.sort)
+			.subscribe(items => {
+				if (items.length === 0) {
+					this.showInfoHeader = true;
+				}
+				this.items = items;
+			});
+
+
+
+
 	}
 
 	ngOnInit() {
@@ -44,7 +80,7 @@ export class SearchComponent implements OnInit {
 				this.sub.unsubscribe();
 			}
 			this.sub = this.dataService
-				.search(this.message.text, 1)
+				.search(this.message.text, 1, this.sort)
 				.subscribe(items => {
 					if (items.length === 0) {
 						this.showInfoHeader = true;
