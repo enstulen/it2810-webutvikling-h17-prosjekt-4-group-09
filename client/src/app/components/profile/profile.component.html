@@ -6,7 +6,7 @@
 
   <div class="profile-content">
 
-      <div *ngFor="let item of items" class="profile-item">
+      <div *ngFor="let item of items" class="profile-item" (click)="goToItem(item.code)">
 
         <div class="item-favorite">
             <img (click)="deFavoriteItem(item)" src="../../../assets/icons/star3.png" />

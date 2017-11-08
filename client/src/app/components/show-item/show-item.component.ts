@@ -19,14 +19,18 @@ export class ShowItemComponent implements OnInit {
 
   ngOnInit() {
 
-    this.is_logged_in = true; // Her må det hentes fra API om brukeren er logget inn
+    this.is_logged_in = false; // Her må det hentes fra API om brukeren er logget inn
+    if(localStorage.getItem("token")) {
+      this.is_logged_in = true;
+    }
+
     this.is_favorite = true; // Her må det hentes fra API om brukeren har fovorisert denne varen
     console.log(this.router.url.split('/')[2]);
     this.dataService.getSpecificItem(this.router.url.split('/')[2]).subscribe(item => {
       this.item = item;
       this.apkValue = Math.round(((item.abv * (item.containerSize * 10)) / item.price) * 100) / 100;
 
-      const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI';
+      const token = "Bearer " +  localStorage.getItem("token");
       this.dataService.getFavItem(this.item._id, token).subscribe( item => {
 
         console.log(item.text());
@@ -48,7 +52,7 @@ export class ShowItemComponent implements OnInit {
 
     if (!this.is_favorite) {
 
-      const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI";
+      const token = "Bearer " +  localStorage.getItem("token");
       this.dataService.favoriteItem(item_id, token).subscribe(response => {
         console.log(response);
 
@@ -56,7 +60,7 @@ export class ShowItemComponent implements OnInit {
       this.is_favorite = !this.is_favorite;
     } else {
 
-      const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDJkMzUyMmI5MThiMzQ4Njk2ZWZmMiIsImlhdCI6MTUxMDEzNDYzMX0.NVSHw0rHV6OsjxPCfUpR2-4CAFhewRZhNsj4fYqbUcI";
+      const token = "Bearer " +  localStorage.getItem("token");
       this.dataService.defavoriteItem(item_id, token).subscribe(response => {
         console.log(response);
       });
