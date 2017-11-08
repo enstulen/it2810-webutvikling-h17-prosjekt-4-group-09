@@ -7,7 +7,7 @@ export default function (app) {
   MongoClient.connect(MONGO_URL)
     .then((connection) => {
       app.products = connection.collection('products');
-      app.categories = connection.collection('categories');
+      app.users = connection.collection('users');
       console.log('Database connection established');
     })
     .catch(err => console.error(err));
