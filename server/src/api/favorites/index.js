@@ -8,6 +8,7 @@ const allFavorites = async (ctx) => {
   const token = ctx.request.header.authorization;
   const key = token.split(' ')[1];
   const decoded = jsonwebtoken.verify(key, SECRET);
+  console.log(decoded);
   const user = await ctx.app.users.findOne({ _id: ObjectID(decoded.id) });
   const productIDs = user.favorites;
   const products = [];
