@@ -8,6 +8,7 @@ const isUser = async (username, ctx) => ctx.app.users.findOne({ username });
 
 const registerUser = async (ctx) => {
   const user = ctx.request.body;
+  
   console.log(user);
   if (await isUser(user.username, ctx)) {
     ctx.response.status = 409;
@@ -35,14 +36,18 @@ const sign = payload => jsonwebtoken.sign(payload, SECRET);
 const getToken = async (ctx) => {
   const userInfo = ctx.request.body;
   const user = await isUser(userInfo.username, ctx);
+  console.log(userInfo.password);
+  console.log(user.password);
   if (user) {
-    console.log(user._id);
-    if (isValidPassword(userInfo.password, user.password)) {
+    if (await isValidPassword(userInfo.password, user.password)) {
       ctx.body = {
         token: sign({
           id: user._id,
         }),
       };
+    } else {
+      ctx.status = 401;
+      ctx.body = { error: 'Invalid login' };
     }
   } else {
     ctx.status = 401;
