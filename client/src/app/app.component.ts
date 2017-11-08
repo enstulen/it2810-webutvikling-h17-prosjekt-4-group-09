@@ -34,6 +34,7 @@ export class AppComponent {
 	}
 
 	searchChange(newValue) {
+		this.showLogin = false;
 		this.router.navigate(['/search']);
 		this.searchString = newValue;
 		this.messageService.sendMessage(this.searchString);
