@@ -1,20 +1,27 @@
-import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
-import "rxjs/add/operator/map";
+import { Injectable } from '@angular/core';
+import {
+	Http,
+	RequestOptions,
+	Response,
+	Headers,
+	RequestMethod
+} from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
 	itemsPerPage = 25;
 
 	constructor(public http: Http) {
-		console.log("Data service connected");
+		console.log('Data service connected');
 	}
 
 	getTopListItems(page, sort) {
 		const from = page * this.itemsPerPage - this.itemsPerPage;
 		return this.http
 			.get(
-				`http://it2810-09.idi.ntnu.no:3000/products?from=${from}&limit=${this.itemsPerPage}&sort=${sort}`
+				`http://it2810-09.idi.ntnu.no:3000/products?from=${from}&limit=${this
+					.itemsPerPage}&sort=${sort}`
 			)
 			.map(res => res.json());
 	}
@@ -23,20 +30,21 @@ export class DataService {
 		const from = page * this.itemsPerPage - this.itemsPerPage;
 		return this.http
 			.get(
-				`http://it2810-09.idi.ntnu.no:3000/products?category=${category}&from=${from}&limit=${this.itemsPerPage}&sort=${sort}`
+				`http://it2810-09.idi.ntnu.no:3000/products?category=${category}&from=${from}&limit=${this
+					.itemsPerPage}&sort=${sort}`
 			)
 			.map(res => res.json());
 	}
 	getMap() {
 		return this.http.get(
-			"https://mapsearch.eniro.com/search/search.json?callback=jQuery211014733662236314338_1509801093491&profile=no&index=yp_sp&q=a%20s%20vinmonopolet&BBOX=4.21875%2C56.96893619436121%2C12.073974609375%2C62.865168668923125&pageSize=500"
+			'https://mapsearch.eniro.com/search/search.json?callback=jQuery211014733662236314338_1509801093491&profile=no&index=yp_sp&q=a%20s%20vinmonopolet&BBOX=4.21875%2C56.96893619436121%2C12.073974609375%2C62.865168668923125&pageSize=500'
 		);
 	}
 
 	getSpecificItem(id) {
 		// id = "5060154910315"
 		// http://it2810-09.idi.ntnu.no:3000/products/9891001
-		var url = `http://it2810-09.idi.ntnu.no:3000/products/${id}`;
+		const url = `http://it2810-09.idi.ntnu.no:3000/products/${id}`;
 		return this.http.get(url).map(res => res.json());
 	}
 
@@ -54,8 +62,38 @@ export class DataService {
 		const from = page * this.itemsPerPage - this.itemsPerPage;
 		return this.http
 			.get(
-				`http://it2810-09.idi.ntnu.no:3000/products?search=${subString}&from=${from}&limit=${this.itemsPerPage}&sort=${sort}`
+				`http://it2810-09.idi.ntnu.no:3000/products?search=${subString}&from=${from}&limit=${this
+					.itemsPerPage}&sort=${sort}`
 			)
 			.map(res => res.json());
+	}
+
+	createUser(username, password) {
+		console.log(username);
+		console.log(password);
+
+		const body: any = {
+			username: username,
+			password: password
+		};
+		const url = 'http://it2810-09.idi.ntnu.no:3000/users';
+		const headers = new Headers({
+			'Content-Type': 'application/json'
+		});
+		const options = new RequestOptions({
+			headers: headers
+		});
+		return this.http.post(url, body, options).map((res: Response) => res);
+	}
+	login(username, password) {
+		const body: any = { username: username, password: password };
+		const url = 'http://it2810-09.idi.ntnu.no:3000/auth';
+		const headers = new Headers({
+			'Content-Type': 'application/json'
+		});
+		const options = new RequestOptions({ headers: headers });
+		return this.http
+			.post(url, body, options)
+			.map((res: Response) => res.json());
 	}
 }
