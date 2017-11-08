@@ -23,13 +23,12 @@
 
 .text {
     flex: 1;
-
+    width: 75%;
 }
 
 .text p{
     text-align: center;
     font-weight: lighter;
-
 }
 
 .header2 {
@@ -48,6 +47,12 @@
 }
 
 agm-map {
-  height: 600px;
-  width: 1000px;
+    height: 600px;
+    width: 75vw;
+}
+@media screen and (max-width: 800px)
+{
+  agm-map {
+      width: 100vw;
+  }
 }
