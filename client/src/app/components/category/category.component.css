@@ -9,12 +9,14 @@
 .header{
   margin-top: 20px;
   margin-left: 10%;
+  font-weight: lighter;
 }
 .sort-by{
   display: inline-block;
   margin-top: 20px;
   margin-right: 10%;
   color: #878787;
+  font-weight: lighter;
 }
 .top-container{
   display: flex;
