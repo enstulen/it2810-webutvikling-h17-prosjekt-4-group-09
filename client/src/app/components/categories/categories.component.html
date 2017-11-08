@@ -1,3 +1,9 @@
-<p>
-  categories works!
-</p>
+<div class="container">
+  <div class="category-container" *ngFor="let category of categories">
+    <div class="category" routerLink="/categories/{{category.category}}">
+      <img class="image" src="{{category.image}}" />
+      <h4 class="text">{{category.title}}</h4>
+      <img class="arrow" src="../../../assets/icons/ArrowRight.png" />
+    </div>
+  </div>
+</div>

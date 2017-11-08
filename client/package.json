@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
@@ -24,7 +25,10 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "jquery": "^3.2.1",
     "ngx-infinite-scroll": "^0.6.1",
+    "popper.js": "^1.12.6",
+    "rx": "^4.1.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

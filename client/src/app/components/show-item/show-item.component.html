@@ -1,3 +1,169 @@
-<p>
-  show-item works!
-</p>
+
+  <div class="showItem-body">
+
+    <h1 class="item_title">{{ item.name }}</h1>
+
+    <div class="showItem-top">
+
+      <div class="item-points">
+        <h3 class="item-points-text">{{ item.points }}</h3>
+      </div>
+
+      <div *ngIf="is_logged_in" (click)="favouriteItem(0,0)" class="item-favourite">
+
+        <img *ngIf="is_favorite" src="../../../assets/icons/star2.png" />
+        <img *ngIf="!is_favorite" src="../../../assets/icons/star3.png" />
+      </div>
+
+      <div class="top-left">
+
+        <img src="{{ item.images.big }}" />
+
+      </div>
+
+      <div class="top-right">
+
+        <div class="top-right-top">
+
+          <div class="top-values">
+            <div>
+              <p class="top_text">
+                {{ apkValue }}
+              </p>
+              <p class="bottom_text">
+                Apk
+              </p>
+            </div>
+            <div>
+              <p class="top_text">
+                {{ item.price }}
+              </p>
+              <p class="bottom_text">
+                kr
+              </p>
+            </div>
+            <div>
+              <p class="top_text">
+                {{ item.abv }} | {{ item.containerSize }}
+              </p>
+              <p class="bottom_text">
+                Prosent/l
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-right-bottom">
+
+            <a href="{{ item.url }}">
+
+                <input type="submit" value="KJØP NÅ">
+            </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <h1 class="top_title">Detaljer</h1>
+
+    <div class="showItem-bottom">
+
+      <div *ngIf="item.productType" class="text-container">
+        <p class="text-top">
+            Varetype
+        </p>
+        <p class="text-bottom">
+            {{ item.productType }}
+        </p>
+      </div>
+      <div *ngIf="item.code" class="text-container">
+        <p class="text-top">
+            Varenummer
+        </p>
+        <p class="text-bottom">
+            {{ item.code }}
+        </p>
+      </div>
+      <div *ngIf="item.pricePerLiter" class="text-container">
+        <p class="text-top">
+            Pris per liter
+        </p>
+        <p class="text-bottom">
+            {{ item.pricePerLiter }}
+        </p>
+      </div>
+      <div *ngIf="item.color" class="text-container">
+        <p class="text-top">
+            Farge
+        </p>
+        <p class="text-bottom">
+            {{ item.color }}
+        </p>
+      </div>
+      <div *ngIf="item.taste" class="text-container">
+        <p class="text-top">
+            Smak
+        </p>
+        <p class="text-bottom">
+            {{ item.taste }}
+        </p>
+      </div>
+
+    </div>
+
+    <h1 class="top_title">Innhold</h1>
+
+    <div class="showItem-bottom">
+
+      <div *ngIf="item.abv" class="text-container">
+        <p class="text-top">
+            Alkohol
+        </p>
+        <p class="text-bottom">
+            {{ item.abv }}
+        </p>
+      </div>
+      <div *ngIf="item.acid" class="text-container">
+        <p class="text-top">
+            Syre
+        </p>
+        <p class="text-bottom">
+            {{ item.acid }}
+        </p>
+      </div>
+      <div *ngIf="item.sugar" class="text-container">
+        <p class="text-top">
+            Sukker
+        </p>
+        <p class="text-bottom">
+            {{ item.sugar }}
+        </p>
+      </div>
+
+    </div>
+
+    <h1 class="top_title">Emballasje og merking</h1>
+
+    <div class="showItem-bottom">
+
+      <div *ngIf="item.containerType" class="text-container">
+        <p class="text-top">
+            Emballasjetype
+        </p>
+        <p class="text-bottom">
+            {{ item.containerType }}
+        </p>
+      </div>
+      <div *ngIf="item.cork" class="text-container">
+        <p class="text-top">
+            Kork
+        </p>
+        <p class="text-bottom">
+            {{ item.cork }}
+        </p>
+      </div>
+
+    </div>
+  </div>

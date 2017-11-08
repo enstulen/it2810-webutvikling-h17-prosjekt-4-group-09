@@ -1,0 +1,85 @@
+
+.profile-body {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-header {
+
+  display: flex;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.profile-header h2 {
+
+
+}
+
+.profile-content {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-content .profile-item {
+
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 8px;
+  margin-top: 15px;
+  height: 85px;
+}
+
+.profile-content .profile-item .item-favorite {
+
+  width: 30px;
+  margin-left: 20px;
+
+}
+
+.profile-content .profile-item .item-text {
+  width: 70%;
+  margin-left: 10px;
+}
+
+.profile-content .profile-item .item-text p {
+
+  margin: auto;
+  margin-left: 10px;
+
+}
+
+.profile-content .profile-item .item-image {
+  width: 23%;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  margin-right: 5px;
+}
+
+.profile-content .profile-item .item-favorite img {
+  height: 30px;
+
+}
+
+.profile-content .profile-item .item-favorite img:hover {
+
+  content:url("../../../assets/icons/star2.png");
+
+}
+
+.profile-content .profile-item .item-image img {
+  height: 70px;
+
+}
