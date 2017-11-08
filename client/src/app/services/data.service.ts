@@ -57,71 +57,46 @@ export class DataService {
 
 		const url = 'http://it2810-09.idi.ntnu.no:3000/favorites';
 		const headers = new Headers({
-
 			'Content-Type': 'application/json',
-			'token': user_token,
-			'Authorization': user_token,
-
+			token: user_token,
+			Authorization: user_token
 		});
 		const options = new RequestOptions({ headers: headers });
-		return this.http
-		.get(url, options)
-		.map((res: Response) => res.json());
+		return this.http.get(url, options).map((res: Response) => res.json());
 	}
 
 	defavoriteItem(item_id, user_token) {
-
-	    console.log('TESTETSTSTS');
-			const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
-      const headers = new Headers({
-
-        'Content-Type': 'application/json',
-        'token': user_token,
-        'Authorization': user_token,
-
-      });
-
-      const options = new RequestOptions({ headers: headers });
-      return this.http
-      .delete(url, options)
-      .map((res: Response) => res);
+		const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
+		const headers = new Headers({
+			'Content-Type': 'application/json',
+			token: user_token,
+			Authorization: user_token
+		});
+		const options = new RequestOptions({ headers: headers });
+		return this.http.delete(url, options).map((res: Response) => res);
 	}
 
 	favoriteItem(item_id, user_token) {
-
-			const body: any = {};
-			const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
-			const headers = new Headers({
-
-				'Content-Type': 'application/json',
-				'token': user_token,
-				'Authorization': user_token,
-
-			});
-			const options = new RequestOptions({ headers: headers });
-			return this.http
-			.post(url, body, options)
-			.map((res: Response) => res);
-
-			//this.http.post("http://it2810-09.idi.ntnu.no:3000/favorites/" + item_id, { headers:user_token, }).subscribe();
+		const body: any = {};
+		const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
+		const headers = new Headers({
+			'Content-Type': 'application/json',
+			token: user_token,
+			Authorization: user_token
+		});
+		const options = new RequestOptions({ headers: headers });
+		return this.http.post(url, body, options).map((res: Response) => res);
 	}
 
 	getFavItem(item_id, user_token) {
-
-		console.log('TESTETSTT');
 		const url = 'http://it2810-09.idi.ntnu.no:3000/favorites/' + item_id;
 		const headers = new Headers({
-
 			'Content-Type': 'application/json',
-			'token': user_token,
-			'Authorization': user_token,
-
+			token: user_token,
+			Authorization: user_token
 		});
 		const options = new RequestOptions({ headers: headers });
-		return this.http
-		.get(url, options)
-		.map((res: Response) => res);
-
+		return this.http.get(url, options).map((res: Response) => res);
 	}
 
 	search(subString, page, sort) {

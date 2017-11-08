@@ -59,21 +59,39 @@ export class AppComponent {
 		this.warningLabel = '';
 		this.login = !this.login;
 	}
-	loginButtonPressed() {
-		if (this.login) {
-			console.log('login');
-			let response: any;
-			this.dataService.login(this.email, this.password).subscribe(
+
+	loginServer() {
+		let response: any;
+		this.dataService.login(this.email, this.password).subscribe(
+			data => {
+				response = data;
+				this.showLogin = false;
+				this.loggedIn = true;
+				this.router.navigate(['/profile']);
+				localStorage.setItem('token', response.token);
+				this.warningLabel = '';
+			},
+			err => {
+				this.warningLabel = 'Feil ved innlogging.';
+				console.error(err);
+			},
+			() => {
+				console.log(response);
+			}
+		);
+	}
+	registerServer() {
+		let response: any;
+		if (this.password === this.passwordRepeat) {
+			this.dataService.createUser(this.email, this.password).subscribe(
 				data => {
 					response = data;
 					this.showLogin = false;
-					this.loggedIn = true;
-					this.router.navigate(['/profile']);
-					localStorage.setItem('token', response.token);
 					this.warningLabel = '';
+					this.loginServer();
 				},
 				err => {
-					this.warningLabel = err;
+					this.warningLabel = 'Feil ved registrering.';
 					console.error(err);
 				},
 				() => {
@@ -81,23 +99,15 @@ export class AppComponent {
 				}
 			);
 		} else {
-			console.log('register');
-			let response: any;
-			this.dataService.createUser(this.email, this.password).subscribe(
-				data => {
-					response = data;
-					this.showLogin = false;
-					this.router.navigate(['/profile']);
-					this.warningLabel = '';
-				},
-				err => {
-					this.warningLabel = err;
-					console.error(err);
-				},
-				() => {
-					console.log(response);
-				}
-			);
+			this.warningLabel = 'Passord må være like.';
+		}
+	}
+
+	loginButtonPressed() {
+		if (this.login) {
+			this.loginServer();
+		} else {
+			this.registerServer();
 		}
 	}
 	profileButtonPressed() {

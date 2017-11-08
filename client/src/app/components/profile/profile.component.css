@@ -1,92 +1,79 @@
-
 .profile-body {
-
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .profile-header {
-
-  display: flex;
-  margin-left: 5%;
-  margin-top: 5%;
+	display: flex;
+	margin-left: 5%;
+	margin-top: 5%;
 }
 
 .profile-header h2 {
-
-
 }
 
 .profile-content {
-
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .profile-content .profile-item {
-
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  border-radius: 8px;
-  margin-top: 15px;
-  height: 85px;
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	border-radius: 8px;
+	margin-top: 15px;
+	height: 85px;
 }
 
 .profile-content .profile-item:hover {
-
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	cursor: pointer;
 }
 
 .profile-content .profile-item .item-favorite {
-
-  width: 30px;
-  margin-left: 20px;
-
+	width: 30px;
+	margin-left: 20px;
 }
 
 .profile-content .profile-item .item-text {
-  width: 70%;
-  margin-left: 10px;
+	width: 70%;
+	margin-left: 10px;
 }
 
 .profile-content .profile-item .item-text p {
-
-  margin: auto;
-  margin-left: 10px;
-
+	margin: auto;
+	margin-left: 10px;
 }
 
 .profile-content .profile-item .item-image {
-  width: 23%;
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
-  flex-direction: row;
-  margin-right: 5px;
+	width: 23%;
+	align-items: center;
+	justify-content: flex-end;
+	display: flex;
+	flex-direction: row;
+	margin-right: 5px;
 }
 
 .profile-content .profile-item .item-favorite img {
-  height: 30px;
-
+	height: 30px;
 }
 
 .profile-content .profile-item .item-favorite img:hover {
-
-  content:url("../../../assets/icons/star2.png");
-
+	content: url('../../../assets/icons/star2.png');
 }
 
 .profile-content .profile-item .item-image img {
-  height: 70px;
+	height: 70px;
+}
 
+.favorite-warning {
+	padding: 50px;
 }

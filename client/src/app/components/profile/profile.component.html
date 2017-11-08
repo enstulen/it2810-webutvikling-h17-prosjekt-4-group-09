@@ -5,26 +5,26 @@
   </div>
 
   <div class="profile-content">
+    <h4 *ngIf="items.length < 1" class="favorite-warning">Her kommer favorittene dine. Legg til noen favoritter!</h4>
+    <div *ngFor="let item of items" class="profile-item" (click)="goToItem(item.code)">
 
-      <div *ngFor="let item of items" class="profile-item" (click)="goToItem(item.code)">
-
-        <div class="item-favorite">
-            <img (click)="deFavoriteItem(item)" src="../../../assets/icons/star3.png" />
-        </div>
-
-        <div class="item-text">
-
-            <p>
-              {{ item.name }}
-            </p>
-
-        </div>
-
-        <div class="item-image">
-
-            <img src="{{ item.images.big }}" />
-        </div>
+      <div class="item-favorite">
+        <img (click)="deFavoriteItem(item)" src="../../../assets/icons/star3.png" />
       </div>
+
+      <div class="item-text">
+
+        <p>
+          {{ item.name }}
+        </p>
+
+      </div>
+
+      <div class="item-image">
+
+        <img src="{{ item.images.big }}" />
+      </div>
+    </div>
 
   </div>
 
