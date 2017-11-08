@@ -18,6 +18,7 @@ export class ShowItemComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
 
     this.is_logged_in = false; // Her må det hentes fra API om brukeren er logget inn
     if(localStorage.getItem("token")) {
