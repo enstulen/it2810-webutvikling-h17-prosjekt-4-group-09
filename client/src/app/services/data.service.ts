@@ -69,9 +69,6 @@ export class DataService {
 	}
 
 	createUser(username, password) {
-		console.log(username);
-		console.log(password);
-
 		const body: any = {
 			username: username,
 			password: password

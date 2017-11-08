@@ -13,10 +13,12 @@ export class AppComponent {
 	menuVisible: false;
 	login = true;
 	showLogin = false;
+	loggedIn = false;
 
 	email: string;
 	password: string;
 	passwordRepeat: string;
+	warningLabel: string;
 
 	searchString: string;
 
@@ -24,7 +26,12 @@ export class AppComponent {
 		private messageService: MessageService,
 		private router: Router,
 		private dataService: DataService
-	) {}
+	) {
+		this.warningLabel = '';
+		if (localStorage.getItem('token')) {
+			this.loggedIn = true;
+		}
+	}
 
 	searchChange(newValue) {
 		this.router.navigate(['/search']);
@@ -43,10 +50,13 @@ export class AppComponent {
 		}
 	}
 	onClickLink() {
+		this.showLogin = false;
+		this.warningLabel = '';
 		const x = document.getElementById('myTopnav');
 		x.className = 'topnav';
 	}
 	switchLoginButtonPressed() {
+		this.warningLabel = '';
 		this.login = !this.login;
 	}
 	loginButtonPressed() {
@@ -56,8 +66,16 @@ export class AppComponent {
 			this.dataService.login(this.email, this.password).subscribe(
 				data => {
 					response = data;
+					this.showLogin = false;
+					this.loggedIn = true;
+					this.router.navigate(['/profile']);
+					localStorage.setItem('token', response.token);
+					this.warningLabel = '';
 				},
-				err => console.error(err),
+				err => {
+					this.warningLabel = err;
+					console.error(err);
+				},
 				() => {
 					console.log(response);
 				}
@@ -68,8 +86,14 @@ export class AppComponent {
 			this.dataService.createUser(this.email, this.password).subscribe(
 				data => {
 					response = data;
+					this.showLogin = false;
+					this.router.navigate(['/profile']);
+					this.warningLabel = '';
 				},
-				err => console.error(err),
+				err => {
+					this.warningLabel = err;
+					console.error(err);
+				},
 				() => {
 					console.log(response);
 				}
@@ -78,5 +102,15 @@ export class AppComponent {
 	}
 	profileButtonPressed() {
 		this.showLogin = !this.showLogin;
+	}
+	profileButtonMenuPressed() {
+		this.showLogin = false;
+		this.router.navigate(['/profile']);
+	}
+	logoutButtonPressed() {
+		this.router.navigate(['/']);
+		this.loggedIn = false;
+		this.showLogin = false;
+		localStorage.removeItem('token');
 	}
 }

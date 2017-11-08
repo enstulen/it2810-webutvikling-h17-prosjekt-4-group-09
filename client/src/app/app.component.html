@@ -25,15 +25,23 @@
   <a href="javascript:void(0);" style="font-size:20px; 	text-decoration: none;" class="icon" (click)="onClickMenu()">&#9776;</a>
 </div>
 <div class="login" *ngIf="showLogin">
-  <input [(ngModel)]="email" class="textField" placeholder="Epost" type="text">
-  <input [(ngModel)]="password" class="textField" placeholder="Passord" type="text">
-  <input [(ngModel)]="passwordRepeat" *ngIf="!login" class="textField" placeholder="Gjenta passord" type="text">
+  <a href="javascript:;" *ngIf="loggedIn" class="login-button" (click)="profileButtonMenuPressed()">
+    Profil
+  </a>
+  <a href="javascript:;" *ngIf="loggedIn" class="login-button" (click)="logoutButtonPressed()">
+    Logg ut
+  </a>
+  <input [(ngModel)]="email" *ngIf="!loggedIn" class="textField" placeholder="Epost" type="text">
+  <input [(ngModel)]="password" *ngIf="!loggedIn" class="textField" placeholder="Passord" type="text">
+  <input [(ngModel)]="passwordRepeat" *ngIf="!login && !loggedIn" class="textField" placeholder="Gjenta passord" type="text">
   <br>
-  <a href="#" class="switch-login-button" (click)="switchLoginButtonPressed()">
+  <a href="javascript:;" *ngIf="!loggedIn" class="switch-login-button" (click)="switchLoginButtonPressed()">
     {{ login ? "Registrer deg" : "Logg inn"}}
   </a>
   <br>
-  <a href="#" class="login-button" (click)="loginButtonPressed()">
+  <p *ngIf="warningLabel !== ''" class="warning">{{warningLabel}}</p>
+
+  <a href="javascript:;" *ngIf="!loggedIn" class="login-button" (click)="loginButtonPressed()">
     {{ login ? "Logg inn" : "Registrer deg"}}
   </a>
 </div>

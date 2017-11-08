@@ -118,6 +118,11 @@ li {
 	color: black;
 	text-decoration: none;
 }
+.warning {
+	padding: 10px;
+	color: white;
+	font-size: 10px;
+}
 
 /* Hide nav-links, image etc and show icon */
 @media screen and (max-width: 700px) {
