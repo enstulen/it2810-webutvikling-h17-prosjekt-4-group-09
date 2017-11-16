@@ -1,28 +1,33 @@
 Server
 ======
 
-# Install npm
+Install packages
+
 ```
 cd server/
 npm install
 ```
 
-# Run locally
+Run locally
+
 ```
 npm run webserver
 ```
 
-# Build for prod
+Build for prod
+
 ```
 npm run build
 ```
 
-# Serve build
+Serve build
+
 ```
 npm run serve
 ```
 
-# Run tests
+Run tests
+
 ```
 npm run test
 ```
