@@ -69,6 +69,8 @@ const createParameters = (query, options) => {
   }
   parameters.find = {};
   Object.assign(parameters.find, parameters.category, parameters.search);
+  delete parameters.category;
+  delete parameters.search;
   return parameters;
 };
 
