@@ -43,4 +43,13 @@ describe('ToplistComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+	it(
+		'should render sort',
+		async(() => {
+			fixture = TestBed.createComponent(ToplistComponent);
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(compiled.querySelector('#sort'));
+		})
+	);
 });

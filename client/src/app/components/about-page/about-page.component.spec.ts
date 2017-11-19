@@ -29,4 +29,13 @@ describe('AboutPageComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+	it(
+		'should render title in a h1 tag',
+		async(() => {
+			fixture = TestBed.createComponent(AboutPageComponent);
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(compiled.querySelector('#header').textContent).toContain('OM APK');
+		})
+	);
 });

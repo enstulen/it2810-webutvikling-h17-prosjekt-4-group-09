@@ -1,20 +1,18 @@
 <div class="top-container">
-    <h3 class="header">Toppliste</h3>
-    <p class="sort-by"> Sorter etter: <span>
-      <select [(ngModel)]="selectSort" class="select" (change) = "valueChange()">
-        <option value="Pris synkende" >Pris synkende</option>
-        <option value="Pris stigende" >Pris stigende</option>
-        <option value="APK synkende" >APK synkende</option>
-        <option value="APK stigende" >APK stigende</option>
-      </select></span></p>
+  <h3 class="header" id="header">Toppliste</h3>
+  <p class="sort-by" id="sort"> Sorter etter:
+    <span>
+      <select [(ngModel)]="selectSort" class="select" (change)="valueChange()">
+        <option value="Pris synkende">Pris synkende</option>
+        <option value="Pris stigende">Pris stigende</option>
+        <option value="APK synkende">APK synkende</option>
+        <option value="APK stigende">APK stigende</option>
+      </select>
+    </span>
+  </p>
 </div>
-<div class="container"
-  infiniteScroll
-  [infiniteScrollDistance]="0"
-  [infiniteScrollThrottle]="50"
-  (scrolled)="onScroll()">
+<div class="container" infiniteScroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
 
-    <app-alcohol-item *ngFor="let item of items"
-      [item]="item">
-    </app-alcohol-item>
+  <app-alcohol-item *ngFor="let item of items" [item]="item">
+  </app-alcohol-item>
 </div>

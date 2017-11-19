@@ -44,4 +44,22 @@ describe('SearchComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+	it(
+		'should render title in a h3 tag',
+		async(() => {
+			fixture = TestBed.createComponent(SearchComponent);
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(compiled.querySelector('#header').textContent).toContain('Søk');
+		})
+	);
+	it(
+		'should render sort',
+		async(() => {
+			fixture = TestBed.createComponent(SearchComponent);
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(compiled.querySelector('#sort'));
+		})
+	);
 });

@@ -1,12 +1,12 @@
 <div class="top-container">
-  <h3 class="header">Søk</h3>
-  <p class="sort-by"> Sorter etter:
+  <h3 class="header" id="header">Søk</h3>
+  <p class="sort-by" id="sort"> Sorter etter:
     <span>
-      <select [(ngModel)]="selectSort" class="select" (change) = "valueChange()">
-        <option value="Pris synkende" >Pris synkende</option>
-        <option value="Pris stigende" >Pris stigende</option>
-        <option value="APK synkende" >APK synkende</option>
-        <option value="APK stigende" >APK stigende</option>
+      <select [(ngModel)]="selectSort" class="select" (change)="valueChange()">
+        <option value="Pris synkende">Pris synkende</option>
+        <option value="Pris stigende">Pris stigende</option>
+        <option value="APK synkende">APK synkende</option>
+        <option value="APK stigende">APK stigende</option>
       </select>
     </span>
   </p>

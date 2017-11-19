@@ -45,4 +45,13 @@ describe('CategoryComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+	it(
+		'should render sort',
+		async(() => {
+			fixture = TestBed.createComponent(CategoryComponent);
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(compiled.querySelector('#sort'));
+		})
+	);
 });
