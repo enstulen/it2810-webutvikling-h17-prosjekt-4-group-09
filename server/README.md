@@ -40,7 +40,11 @@ Documentation
 
   - [GET /products](#get-products)
   - [GET /products/[code]](#get-productscode)
-  - [POST /magazines/[id]/articles](#post-magazinesidarticles)
+  - [POST /users](#post-users)
+  - [POST /auth](#post-auth)
+  - [GET /favorites](#get-favorites)
+  - [POST /favorites[id]](#post-favoritesid)
+  - [DELETE /favorites[id]](#delete-favoritesid)
 
 ### GET /products
 
@@ -71,7 +75,7 @@ Response body:
     products
   ]
 
-### GET /magazines/[id]
+### GET /products/[code]
 
 Example:  http://it2810-09.idi.ntnu.no:3000/products/9891001
 
