@@ -5,3 +5,13 @@ APK er en måleenhet for **antall ml ren alkohol per krone** og regnes ut ved å
 
 ## Dokumentasjon
 Dokumentasjon er skrevet i de respektive undermappene `/server` og `/client`
+
+## Folk som er med på prosjektet:
+* August Lund Eilertsen 
+* Jonathan Linnestad
+* Mari Fredriksen
+* Morten Stulen
+
+
+
+
