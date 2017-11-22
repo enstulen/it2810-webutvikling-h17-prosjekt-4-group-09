@@ -35,6 +35,17 @@ npm run test
 Documentation
 =============
 
+*Webapplikasjonen kjører på virtual maskinen og bruker node.js på serversiden
+
+*Bruker MongoDB, både skriver og leser fra MongoDB
+
+*Har laget et brukersystem basert på REST-prinsipper, der en bruker får et token ved innlogging
+
+*Serverkoden er testet, kjør 'npm run test' 
+
+
+
+
 
 ### API Resources
 
