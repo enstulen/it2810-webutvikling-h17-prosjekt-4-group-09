@@ -197,7 +197,7 @@ Response body:
   ]
 
 
-### POST /favorites/:id
+### POST /favorites/[id]
 
 Example: POST http://it2810-09.idi.ntnu.no:3000/favorites/59fefeeb1cdfdcb911b774ca
 
@@ -205,7 +205,7 @@ Request header:
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDIzMWE0NzY5ODRhMTlhMjE5YzI4YyIsImlhdCI6MTUxMDA5MzIyM30._6Z63zwn3DlXQEe_2LiqNWZ6PvNN0YTHeDBxW0wJ48Y"
 
 
-### DELETE /favorites/:id
+### DELETE /favorites/[id]
 
 Example: DELETE http://it2810-09.idi.ntnu.no:3000/favorites/59fefeeb1cdfdcb911b774ca
 
