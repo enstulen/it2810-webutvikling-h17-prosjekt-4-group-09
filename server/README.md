@@ -43,8 +43,8 @@ Documentation
   - [POST /users](#post-users)
   - [POST /auth](#post-auth)
   - [GET /favorites](#get-favorites)
-  - [POST /favorites[id]](#post-favoritesid)
-  - [DELETE /favorites[id]](#delete-favoritesid)
+  - [POST /favorites/[id]](#post-favoritesid)
+  - [DELETE /favorites/[id]](#delete-favoritesid)
 
 ### GET /products
 
@@ -188,6 +188,7 @@ Response body:
 Example: http://it2810-09.idi.ntnu.no:3000/favorites
 
 Request header:
+
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDIzMWE0NzY5ODRhMTlhMjE5YzI4YyIsImlhdCI6MTUxMDA5MzIyM30._6Z63zwn3DlXQEe_2LiqNWZ6PvNN0YTHeDBxW0wJ48Y"
 
 Response body: 
@@ -202,6 +203,7 @@ Response body:
 Example: POST http://it2810-09.idi.ntnu.no:3000/favorites/59fefeeb1cdfdcb911b774ca
 
 Request header:
+
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDIzMWE0NzY5ODRhMTlhMjE5YzI4YyIsImlhdCI6MTUxMDA5MzIyM30._6Z63zwn3DlXQEe_2LiqNWZ6PvNN0YTHeDBxW0wJ48Y"
 
 
@@ -210,4 +212,5 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDIzMWE0
 Example: DELETE http://it2810-09.idi.ntnu.no:3000/favorites/59fefeeb1cdfdcb911b774ca
 
 Request header:
+
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDIzMWE0NzY5ODRhMTlhMjE5YzI4YyIsImlhdCI6MTUxMDA5MzIyM30._6Z63zwn3DlXQEe_2LiqNWZ6PvNN0YTHeDBxW0wJ48Y"
