@@ -1,4 +1,4 @@
-# Alkohol Per Krone Client
+# Alkohol Per Krone 
 
 Prosjektet var laget med [Angular CLI](https://github.com/angular/angular-cli) versjon 1.4.9.
 
